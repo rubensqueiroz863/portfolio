@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 export default function AboutPage() {
@@ -20,19 +21,37 @@ export default function AboutPage() {
           />
           
         </div>
-        <button 
-          onClick={() => router.push("/")}
-          className="relative cursor-pointer hover:bg-neutral-700 flex transition-all items-center w-80 h-10 text-white rounded-md bg-neutral-800"
+        <div className="flex gap-2">
+          <button 
+            onClick={() => router.push("/")}
+            className="relative cursor-pointer hover:border border-neutral-500 flex transition-all items-center w-68 h-10 text-white rounded-md bg-neutral-800"
+          >
+            <p className="absolute left-1/2 -translate-x-1/2">view resume</p>
+            <Image
+              src={"https://i.postimg.cc/x8XsLDj1/external-link-icon-white.png"}
+              width={128}
+              height={128}
+              alt="redirect to my resume | Ir para meu resumo"
+              className="w-5 h-5 absolute right-3"        
+            />
+          </button>
+          <button className="w-10 flex justify-center items-center h-10 hover:border border-neutral-500 transition-all cursor-pointer bg-neutral-800 rounded-md">
+            <Image
+              src={"https://i.postimg.cc/4yTjsVYM/download-flat-icon-install-download-upload-load-symbol-simple-flat-free-png.png"}
+              width={128}
+              height={128}
+              alt="Download Button | Botão de Download"
+              className="w-4.5 h-4.5"
+            />
+          </button>
+        </div>
+        <Link 
+          className="flex hover:text-neutral-400 gap-2 items-center"
+          href={"mailto:rubensqueiroz863@gmail.com"}
         >
-          <p className="absolute left-1/2 -translate-x-1/2">view resume</p>
-          <Image
-            src={"https://i.postimg.cc/x8XsLDj1/external-link-icon-white.png"}
-            width={128}
-            height={128}
-            alt="redirect to resume"
-            className="w-5 h-5 absolute right-3"        
-          />
-        </button>
+          <p className="text-2xl">&#9993;&#65038;</p>
+          <p> rubensqueiroz863@gmail.com</p>
+        </Link>
       </div>
     </div>
   )

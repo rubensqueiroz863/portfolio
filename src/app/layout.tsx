@@ -10,6 +10,16 @@ export const ScienceGothic = localFont({
       path: "../fonts/ScienceGothic.ttf",
       weight: "400",
       style: "normal",
+    }, 
+  ],
+});
+
+export const BebasNeue = localFont({
+  src: [
+    {
+      path: "../fonts/BebasNeue-Regular.ttf",
+      weight: "400",
+      style: "normal",
     },
   ],
 });
