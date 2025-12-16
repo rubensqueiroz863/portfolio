@@ -1,5 +1,6 @@
+import { BebasNeue } from "@/utils/fonts";
 import Link from "next/link";
-import { BebasNeue } from "../layout";
+import Image from "next/image";
 
 const navItems = [
   { label: "About", href: "/about" },
@@ -11,12 +12,18 @@ const navItems = [
 export default function NavBar() {
   return (
     <header className="w-full bg-neutral-900">
-      <nav className="flex items-center justify-between h-20 px-8 text-white max-w-7xl mx-auto">
+      <nav className="flex items-center justify-between h-20 px-12 text-white max-w-7xl mx-auto">
         
         {/* Logo */}
-        <Link href="/" className="hover:opacity-80 transition-opacity">
-          <span className={`text-3xl ${BebasNeue.className}`}>
-            Rubens Dev
+        <Link href="/" className="rounded-full border border-neutral-800 p-0.5 hover:bg-neutral-600 transition-all">
+          <span className="">
+            <Image
+              src={"https://i.postimg.cc/HLJMbqbN/channels4-profile.jpg"}
+              width={128}
+              height={128}
+              alt="My Logo | Minha logo"
+              className="w-12 h-12 rounded-full"
+            />
           </span>
         </Link>
 
