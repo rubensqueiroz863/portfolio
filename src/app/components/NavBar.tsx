@@ -15,14 +15,14 @@ export default function NavBar() {
       <nav className="flex items-center justify-between h-20 px-12 text-white max-w-7xl mx-auto">
         
         {/* Logo */}
-        <Link href="/" className="rounded-full border border-neutral-800 p-0.5 hover:bg-neutral-600 transition-all">
+        <Link href="/" className=" p-0.5 transition-all">
           <span className="">
             <Image
               src={"https://i.postimg.cc/HLJMbqbN/channels4-profile.jpg"}
               width={128}
               height={128}
               alt="My Logo | Minha logo"
-              className="w-12 h-12 rounded-full"
+              className="w-10 h-10"
             />
           </span>
         </Link>

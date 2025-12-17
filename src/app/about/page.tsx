@@ -8,8 +8,23 @@ export default function AboutPage() {
   const router = useRouter();
 
   return (
-    <div className="bg-neutral-900 h-screen text-white">
+    <div className="relative bg-neutral-900 h-screen text-white">
+      
       <div className="w-full h-[0.1] bg-neutral-700"></div>
+      <svg
+        className="pointer-events-none absolute inset-0 w-full h-full opacity-[0.1]"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <filter id="noise">
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.8"
+            numOctaves="4"
+            stitchTiles="stitch"
+          />
+        </filter>
+        <rect width="100%" height="100%" filter="url(#noise)" />
+      </svg>
       <div className="flex py-20 px-20 gap-4 justify-center flex-col">
         <div className="flex justify-start">
           <Image
