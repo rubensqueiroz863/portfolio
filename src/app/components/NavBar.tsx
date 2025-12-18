@@ -13,7 +13,20 @@ export default function NavBar() {
   return (
     <header className="w-full bg-neutral-900">
       <nav className="flex items-center justify-between h-20 px-12 text-white max-w-7xl mx-auto">
-        
+        <svg
+          className="pointer-events-none absolute inset-0 w-full min-h-full opacity-[0.1]"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <filter id="noise">
+            <feTurbulence
+              type="fractalNoise"
+              baseFrequency="0.8"
+              numOctaves="4"
+              stitchTiles="stitch"
+            />
+          </filter>
+          <rect width="100%" height="100%" filter="url(#noise)" />
+        </svg>
         {/* Logo */}
         <Link href="/" className=" p-0.5 transition-all">
           <span className="">

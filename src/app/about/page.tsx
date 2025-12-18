@@ -9,10 +9,8 @@ export default function AboutPage() {
 
   return (
     <div className="relative bg-neutral-900 h-screen text-white">
-      
-      <div className="w-full h-[0.1] bg-neutral-700"></div>
       <svg
-        className="pointer-events-none absolute inset-0 w-full h-full opacity-[0.1]"
+        className="pointer-events-none absolute inset-0 w-full min-h-full opacity-[0.1]"
         xmlns="http://www.w3.org/2000/svg"
       >
         <filter id="noise">
@@ -25,6 +23,7 @@ export default function AboutPage() {
         </filter>
         <rect width="100%" height="100%" filter="url(#noise)" />
       </svg>
+      <div className="w-full h-[0.1] bg-neutral-700"></div>
       <div className="flex py-20 px-20 gap-4 justify-center flex-col">
         <div className="flex justify-start">
           <Image
@@ -39,7 +38,7 @@ export default function AboutPage() {
         <div className="flex gap-2">
           <button 
             onClick={() => router.push("/")}
-            className="relative cursor-pointer hover:border border-neutral-500 flex transition-all items-center w-68 h-10 text-white rounded-md bg-neutral-800"
+            className="relative cursor-pointer shadow-md hover:bg-neutral-500 flex transition-all items-center w-68 h-10 text-white rounded-md bg-neutral-800"
           >
             <p className="absolute left-1/2 -translate-x-1/2">view resume</p>
             <Image
@@ -50,9 +49,9 @@ export default function AboutPage() {
               className="w-5 h-5 absolute right-3"        
             />
           </button>
-          <button className="w-10 flex justify-center items-center h-10 hover:border border-neutral-500 transition-all cursor-pointer bg-neutral-800 rounded-md">
+          <button className="w-10 flex justify-center items-center h-10 hover:bg-neutral-500 transition-all cursor-pointer bg-neutral-800 shadow-md rounded-md">
             <Image
-              src={"https://i.postimg.cc/4yTjsVYM/download-flat-icon-install-download-upload-load-symbol-simple-flat-free-png.png"}
+              src={"https://i.postimg.cc/Hx9wYQt7/downloading-updates-xxl.png"}
               width={128}
               height={128}
               alt="Download Button | Botão de Download"
@@ -61,11 +60,17 @@ export default function AboutPage() {
           </button>
         </div>
         <Link 
-          className="flex hover:text-neutral-400 gap-2 items-center"
+          className="group flex w-20  hover:text-neutral-500 transition-all gap-2 items-center"
           href={"mailto:rubensqueiroz863@gmail.com"}
         >
-          <p className="text-2xl">&#9993;&#65038;</p>
-          <p> rubensqueiroz863@gmail.com</p>
+          <Image
+            src={"https://i.postimg.cc/rF1k8sBh/Email.png"}
+            width={128}
+            height={128}
+            alt="My email | Meu email"
+            className="w-5 h-auto"
+          />
+          <p className="mb-1"> rubensqueiroz863@gmail.com</p>
         </Link>
       </div>
     </div>

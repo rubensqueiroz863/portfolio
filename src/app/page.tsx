@@ -10,7 +10,7 @@ export default function HomePage() {
     <div className="relative w-full h-screen bg-neutral-900 overflow-hidden">
       {/* GRAIN OVERLAY */}
       <svg
-        className="pointer-events-none absolute inset-0 w-full h-full opacity-[0.1]"
+        className="pointer-events-none absolute inset-0 w-full min-h-full opacity-[0.1]"
         xmlns="http://www.w3.org/2000/svg"
       >
         <filter id="noise">
@@ -68,6 +68,20 @@ export default function HomePage() {
                 alt="My codepen"
               />
             </motion.div>
+            <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="xl:hidden"
+          >
+            <Image
+              src="https://i.postimg.cc/CxRgT7s9/pattern-lines-2.png"
+              width={512}
+              height={512}
+              alt="Geometric cubes wireframe"
+              className="w-60 h-auto"
+            />
+          </motion.div>
           </div>
 
           {/* IMAGEM */}
@@ -75,7 +89,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="hidden xl:block"
+            className="xl:flex hidden"
           >
             <Image
               src="https://i.postimg.cc/6Q8KVvBv/pattern-lines.webp"
@@ -90,3 +104,4 @@ export default function HomePage() {
     </div>
   );
 }
+//https://i.postimg.cc/kGCJ7SgH/pattern-lines-2.jpg
