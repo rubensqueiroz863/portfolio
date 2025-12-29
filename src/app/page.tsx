@@ -6,16 +6,18 @@ import { motion } from 'framer-motion';
 
 import GenericLink from './components/SocialMediaButton';
 import { ScienceGothic } from '../utils/fonts';
+import { useState } from 'react';
 
-/* ────────────────────────────────────────── */
-/* GitHub Calendar (client-only)               */
-/* ────────────────────────────────────────── */
 const GitHubCalendar = dynamic(
   () => import('react-github-calendar').then((mod) => mod.GitHubCalendar),
   { ssr: false }
 );
 
 export default function HomePage() {
+  const currentYear = new Date().getFullYear();
+  const [year, setYear] = useState(currentYear);
+  const years = [2025];
+
   return (
     <div className="relative w-full min-h-screen bg-neutral-900">
       {/* ─────────────── GRAIN OVERLAY ─────────────── */}
@@ -39,7 +41,7 @@ export default function HomePage() {
       <div className="relative z-10">
         <div className="w-full h-px bg-neutral-700" />
 
-        <div className="flex flex-col xl:flex-row items-center px-20 mt-30 gap-80">
+        <div className="flex mb-10 flex-col xl:flex-row items-center px-20 mt-30 gap-80">
           {/* ───────── TEXT / LINKS / CALENDAR ───────── */}
           <div className="flex flex-col gap-6 max-w-2xl">
             {/* Title */}
@@ -101,18 +103,34 @@ export default function HomePage() {
             </motion.div>
 
             {/* GitHub Contributions */}
-            <div className="flex rounded-md bg-neutral-800 p-6 my-10">
+            <div
+              className="flex rounded-md bg-neutral-800 p-6 mt-10"
+            >
               <section className="w-full text-white overflow-x-auto">
-
-              <GitHubCalendar
-                username="rubensqueiroz863"
-                blockRadius={2}
-                fontSize={18}
-                blockMargin={4}
-              />
-            </section>
+                <GitHubCalendar
+                  username="rubensqueiroz863"
+                  year={year}
+                  blockRadius={2}
+                  fontSize={18}
+                  blockMargin={4}
+                />
+              </section>
             </div>
-            
+            <div className="flex gap-2 flex-wrap">
+              {years.map((y) => (
+                <button
+                  key={y}
+                  onClick={() => setYear(y)}
+                  className={`px-5 py-[5px] rounded-md text-[16px] transition-all
+                    ${year === y 
+                      ? 'bg-green-600 border text-neutral-900 border-neutral-500' 
+                      : 'bg-neutral-800 text-white hover:border-neutral-700 border border-transparent'}
+                  `}
+                >
+                  {y}
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* ───────── DESKTOP IMAGE ───────── */}
@@ -127,7 +145,7 @@ export default function HomePage() {
               width={512}
               height={512}
               alt="Geometric cubes wireframe"
-              className="w-72 h-auto"
+              className="w-82 h-auto"
             />
           </motion.div>
         </div>
