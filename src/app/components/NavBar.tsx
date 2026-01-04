@@ -1,4 +1,4 @@
-import { BebasNeue } from "@/utils/fonts";
+import { BebasNeue } from "@/lib/fonts";
 import Link from "next/link";
 import Image from "next/image";
 
