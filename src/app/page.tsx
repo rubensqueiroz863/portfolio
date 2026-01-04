@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 import GenericLink from './components/SocialMediaButton';
-import { ScienceGothic } from '../utils/fonts';
+import { ScienceGothic } from '../lib/fonts';
 import { useState } from 'react';
 
 const GitHubCalendar = dynamic(
