@@ -22,7 +22,7 @@ export default function HomePage() {
     <div className="relative w-full min-h-screen bg-neutral-900">
       {/* Overlay granulado*/}
       <svg
-        className="pointer-events-none fixed inset-0 w-full min-h-screen opacity-[0.1]"
+        className="pointer-events-none fixed inset-0 w-screen h-screen opacity-[0.1]"
         xmlns="http://www.w3.org/2000/svg"
       >
         <filter id="noise">
@@ -39,7 +39,7 @@ export default function HomePage() {
       <div className="relative z-10">
         <div className="w-full h-px bg-neutral-700" />
 
-        <div className="flex mb-10 flex-col xl:flex-row items-center px-20 mt-30 gap-80">
+        <div className="flex mb-10 flex-col xl:flex-row items-center px-6 md:px-10 xl:px-20 mt-30 gap-10 xl:gap-80">
           {/* Textos, Links e Calendario github*/}
           <div className="flex flex-col gap-6 max-w-2xl">
             {/* Titulo */}
@@ -104,7 +104,7 @@ export default function HomePage() {
 
             {/* Calendario GitHub */}
             <div
-              className="flex rounded-md bg-neutral-800 p-6 mt-10"
+              className="flex rounded-md bg-neutral-800 p-6 mt-10 max-w-full overflow-hidden"
             >
               <section className="w-full text-white overflow-x-auto">
                 <GitHubCalendar
