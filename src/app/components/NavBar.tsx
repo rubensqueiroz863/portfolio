@@ -1,7 +1,7 @@
-import { BebasNeue } from "@/lib/fonts";
 import Link from "next/link";
 import Image from "next/image";
 
+// Items usados no map do naviagation
 const navItems = [
   { label: "About", href: "/about" },
   { label: "Projects", href: "/projects" },
@@ -11,8 +11,11 @@ const navItems = [
 
 export default function NavBar() {
   return (
+    // Header principal
     <header className="w-full bg-neutral-900">
+      { /* Conteúdo principal */}
       <nav className="flex items-center justify-between h-20 px-4 md:px-12 xl:px-2 text-white max-w-7xl mx-auto">
+        { /* Layout granulado svg */}
         <svg
           className="pointer-events-none absolute inset-0 w-full min-h-full opacity-[0.1]"
           xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +30,7 @@ export default function NavBar() {
           </filter>
           <rect width="100%" height="100%" filter="url(#noise)" />
         </svg>
-        {/* Logo */}
+        {/* Logo (manda para homepage) */}
         <Link href="/" className=" p-0.5 transition-all">
           <span className="">
             <Image
@@ -39,8 +42,7 @@ export default function NavBar() {
             />
           </span>
         </Link>
-
-        {/* Navigation */}
+        {/* Sistema de navegação com map */}
         <ul className="flex items-center gap-4 md:gap-8">
           {navItems.map((item) => (
             <li key={item.href}>
@@ -53,7 +55,6 @@ export default function NavBar() {
             </li>
           ))}
         </ul>
-
       </nav>
     </header>
   );
