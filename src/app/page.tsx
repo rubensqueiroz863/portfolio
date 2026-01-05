@@ -20,7 +20,7 @@ export default function HomePage() {
 
   return (
     <div className="relative w-full min-h-screen bg-neutral-900">
-      {/* ─────────────── GRAIN OVERLAY ─────────────── */}
+      {/* Overlay granulado*/}
       <svg
         className="pointer-events-none fixed inset-0 w-full min-h-screen opacity-[0.1]"
         xmlns="http://www.w3.org/2000/svg"
@@ -35,16 +35,14 @@ export default function HomePage() {
         </filter>
         <rect width="100%" height="100%" filter="url(#noise)" />
       </svg>
-
-
-      {/* ─────────────── CONTENT ─────────────── */}
+      {/* Conteúdo principal */}
       <div className="relative z-10">
         <div className="w-full h-px bg-neutral-700" />
 
         <div className="flex mb-10 flex-col xl:flex-row items-center px-20 mt-30 gap-80">
-          {/* ───────── TEXT / LINKS / CALENDAR ───────── */}
+          {/* Textos, Links e Calendario github*/}
           <div className="flex flex-col gap-6 max-w-2xl">
-            {/* Title */}
+            {/* Titulo */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -54,7 +52,7 @@ export default function HomePage() {
               Full-Stack Software Engineer (Next.js & Spring Boot)
             </motion.p>
 
-            {/* Description */}
+            {/* Descrição */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -72,12 +70,14 @@ export default function HomePage() {
               transition={{ duration: 0.5 }}
               className="flex gap-4 pt-4 mb-8"
             >
+              { /* Github */}
               <GenericLink
                 href="https://github.com/rubensqueiroz863"
                 text="GitHub"
                 image="https://i.postimg.cc/BvtxsKyk/25231.png"
                 alt="My GitHub"
               />
+              { /* Codepen */}
               <GenericLink
                 href="https://codepen.io/rubensqueiroz863"
                 text="Codepen"
@@ -102,7 +102,7 @@ export default function HomePage() {
               />
             </motion.div>
 
-            {/* GitHub Contributions */}
+            {/* Calendario GitHub */}
             <div
               className="flex rounded-md bg-neutral-800 p-6 mt-10"
             >
@@ -116,6 +116,7 @@ export default function HomePage() {
                 />
               </section>
             </div>
+            { /* Botões de seleções dos anos do calendario github */}
             <div className="flex gap-2 flex-wrap">
               {years.map((y) => (
                 <button
@@ -133,7 +134,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* ───────── DESKTOP IMAGE ───────── */}
+          {/* Desktop image */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
