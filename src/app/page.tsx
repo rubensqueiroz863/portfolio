@@ -84,14 +84,14 @@ export default function HomePage() {
               { /* Github */}
               <GenericLink
                 href="https://github.com/rubensqueiroz863"
-                text="GitHub"
+                name="GitHub"
                 image="https://i.postimg.cc/BvtxsKyk/25231.png"
                 alt="My GitHub"
               />
               { /* Codepen */}
               <GenericLink
                 href="https://codepen.io/rubensqueiroz863"
-                text="Codepen"
+                name="Codepen"
                 image="https://i.postimg.cc/C5jb65sz/1907-codepen.png"
                 alt="My Codepen"
               />
