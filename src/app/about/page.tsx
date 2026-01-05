@@ -5,10 +5,13 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 export default function AboutPage() {
+  // Router para navegação de pages
   const router = useRouter();
 
   return (
+    // Div principal
     <div className="relative bg-neutral-900 h-screen text-white">
+      { /* layout granulado svg */}
       <svg
         className="pointer-events-none absolute inset-0 w-full min-h-full opacity-[0.1]"
         xmlns="http://www.w3.org/2000/svg"
@@ -23,8 +26,11 @@ export default function AboutPage() {
         </filter>
         <rect width="100%" height="100%" filter="url(#noise)" />
       </svg>
+      { /* Separador da navbar */}
       <div className="w-full h-[0.1] bg-neutral-700"></div>
+      { /* Conteúdo principal */}
       <div className="flex py-20 px-20 gap-4 justify-center flex-col">
+        { /* Minha foto de perfil */}
         <div className="flex justify-start">
           <Image
             src={"https://i.postimg.cc/BQ7xHqWh/3da39-no-user-image-icon-27.png"}
@@ -33,14 +39,15 @@ export default function AboutPage() {
             alt="My photo | Minha foto"
             className="w-80 h-80 rounded-xl"
           />
-          
         </div>
+        { /* Div dos botões sobre o resumé */}
         <div className="flex gap-2">
+          { /* Botão que leva ao resumé */}
           <button 
             onClick={() => router.push("/")}
             className="relative cursor-pointer shadow-md hover:bg-neutral-500 flex transition-all items-center w-68 h-10 text-white rounded-md bg-neutral-800"
           >
-            <p className="absolute left-1/2 -translate-x-1/2">view resume</p>
+            <p className="absolute left-1/2 -translate-x-1/2">view resumé</p>
             <Image
               src={"https://i.postimg.cc/x8XsLDj1/external-link-icon-white.png"}
               width={128}
@@ -49,6 +56,7 @@ export default function AboutPage() {
               className="w-5 h-5 absolute right-3"        
             />
           </button>
+          { /* Botão que faz download do resumé */}
           <button className="w-10 flex justify-center items-center h-10 hover:bg-neutral-500 transition-all cursor-pointer bg-neutral-800 shadow-md rounded-md">
             <Image
               src={"https://i.postimg.cc/Hx9wYQt7/downloading-updates-xxl.png"}
@@ -59,6 +67,7 @@ export default function AboutPage() {
             />
           </button>
         </div>
+        { /* Link que leva ao email */}
         <Link 
           className="group flex w-20  hover:text-neutral-500 transition-all gap-2 items-center"
           href={"mailto:rubensqueiroz863@gmail.com"}
