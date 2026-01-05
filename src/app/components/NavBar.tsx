@@ -12,7 +12,7 @@ const navItems = [
 export default function NavBar() {
   return (
     <header className="w-full bg-neutral-900">
-      <nav className="flex items-center justify-between h-20 px-12 text-white max-w-7xl mx-auto">
+      <nav className="flex items-center justify-between h-20 px-4 md:px-12 xl:px-2 text-white max-w-7xl mx-auto">
         <svg
           className="pointer-events-none absolute inset-0 w-full min-h-full opacity-[0.1]"
           xmlns="http://www.w3.org/2000/svg"
@@ -41,12 +41,12 @@ export default function NavBar() {
         </Link>
 
         {/* Navigation */}
-        <ul className="flex items-center gap-8">
+        <ul className="flex items-center gap-4 md:gap-8">
           {navItems.map((item) => (
             <li key={item.href}>
               <Link
                 href={item.href}
-                className="text-md tracking-wide hover:text-neutral-400 transition-colors"
+                className="text-sm md:text-md xl:text-[15px] tracking-wide hover:text-neutral-400 transition-colors"
               >
                 {item.label}
               </Link>
