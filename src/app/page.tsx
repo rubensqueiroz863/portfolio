@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 import GenericLink from './components/SocialMediaButton';
 import { ScienceGothic } from '../lib/fonts';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const GitHubCalendar = dynamic(
   () => import('react-github-calendar').then((mod) => mod.GitHubCalendar),
@@ -16,7 +16,14 @@ const GitHubCalendar = dynamic(
 export default function HomePage() {
   const currentYear = new Date().getFullYear();
   const [year, setYear] = useState(currentYear);
+  const [fontSize, setFontSize] = useState(18);
   const years = [2025];
+
+  useEffect(() => {
+    if (window.innerWidth < 640) {
+      setFontSize(14);
+    }
+  }, []);
 
   return (
     <div className="relative w-full min-h-screen bg-neutral-900">
@@ -111,7 +118,7 @@ export default function HomePage() {
                   username="rubensqueiroz863"
                   year={year}
                   blockRadius={2}
-                  fontSize={window.innerWidth < 640 ? 14 : 18}
+                  fontSize={fontSize}
                   blockMargin={4}
                 />
               </section>
