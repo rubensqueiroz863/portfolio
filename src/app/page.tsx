@@ -3,22 +3,26 @@
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-
 import GenericLink from './components/SocialMediaButton';
 import { ScienceGothic } from '../lib/fonts';
 import { useEffect, useState } from 'react';
 
+// Pega o github calendar de forma dinâmica e faz importação do GitHubCalendar, renderiza no client
 const GitHubCalendar = dynamic(
   () => import('react-github-calendar').then((mod) => mod.GitHubCalendar),
   { ssr: false }
 );
 
 export default function HomePage() {
+  // Pega o ano atual para o github calendar
   const currentYear = new Date().getFullYear();
   const [year, setYear] = useState(currentYear);
-  const [fontSize, setFontSize] = useState(18);
   const years = [2025];
 
+  // useState para mudar o tamanho da fonte
+  const [fontSize, setFontSize] = useState(18);
+
+  // Muda o tamanho da fonte dependendo do viewport para adaptar ao mobile
   useEffect(() => {
     if (window.innerWidth < 640) {
       setFontSize(14);
@@ -26,8 +30,9 @@ export default function HomePage() {
   }, []);
 
   return (
+    // Div principal do conteúdo
     <div className="relative w-full min-h-screen bg-neutral-900">
-      {/* Overlay granulado*/}
+      {/* Overlay granulado svg*/}
       <svg
         className="pointer-events-none fixed inset-0 w-screen h-screen opacity-[0.1]"
         xmlns="http://www.w3.org/2000/svg"
@@ -44,8 +49,9 @@ export default function HomePage() {
       </svg>
       {/* Conteúdo principal */}
       <div className="relative z-10">
+        {/* Linha divisora da navbar */}
         <div className="w-full h-px bg-neutral-700" />
-
+        { /* Conteúdo */ }
         <div className="flex mb-10 flex-col xl:flex-row items-center px-6 md:px-10 xl:px-20 mt-15 md:mt-30 gap-10 xl:gap-80">
           {/* Textos, Links e Calendario github*/}
           <div className="flex flex-col gap-6 max-w-2xl">
@@ -58,7 +64,6 @@ export default function HomePage() {
             >
               Full-Stack Software Engineer (Next.js & Spring Boot)
             </motion.p>
-
             {/* Descrição */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -69,7 +74,6 @@ export default function HomePage() {
               I'm Rubens Q. Alves, a Full-Stack Software Engineer (Next.js & Spring Boot)
               passionate about learning and building open-source software.
             </motion.p>
-
             {/* Social Links */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -92,7 +96,6 @@ export default function HomePage() {
                 alt="My Codepen"
               />
             </motion.div>
-
             {/* Mobile Image */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -108,7 +111,6 @@ export default function HomePage() {
                 className="w-60 h-auto"
               />
             </motion.div>
-
             {/* Calendario GitHub */}
             <div
               className="flex items-center justify-center rounded-md bg-neutral-800 p-4 mt-10 max-w-full overflow-hidden"
@@ -123,7 +125,7 @@ export default function HomePage() {
                 />
               </section>
             </div>
-            { /* Botões de seleções dos anos do calendario github */}
+            { /* Botões de seleções dos anos do calendario github usando map de forma dinâmica */}
             <div className="flex gap-2 flex-wrap">
               {years.map((y) => (
                 <button
@@ -140,7 +142,6 @@ export default function HomePage() {
               ))}
             </div>
           </div>
-
           {/* Desktop image */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
