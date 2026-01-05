@@ -39,7 +39,7 @@ export default function HomePage() {
       <div className="relative z-10">
         <div className="w-full h-px bg-neutral-700" />
 
-        <div className="flex mb-10 flex-col xl:flex-row items-center px-6 md:px-10 xl:px-20 mt-30 gap-10 xl:gap-80">
+        <div className="flex mb-10 flex-col xl:flex-row items-center px-6 md:px-10 xl:px-20 mt-15 md:mt-30 gap-10 xl:gap-80">
           {/* Textos, Links e Calendario github*/}
           <div className="flex flex-col gap-6 max-w-2xl">
             {/* Titulo */}
@@ -47,7 +47,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className={`text-white text-4xl ${ScienceGothic.className}`}
+              className={`text-white md:text-4xl text-[23px] ${ScienceGothic.className}`}
             >
               Full-Stack Software Engineer (Next.js & Spring Boot)
             </motion.p>
@@ -57,7 +57,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-neutral-400 text-[16px]"
+              className="text-neutral-400 md:text-[16px] text-[14px]"
             >
               I'm Rubens Q. Alves, a Full-Stack Software Engineer (Next.js & Spring Boot)
               passionate about learning and building open-source software.
@@ -104,14 +104,14 @@ export default function HomePage() {
 
             {/* Calendario GitHub */}
             <div
-              className="flex rounded-md bg-neutral-800 p-6 mt-10 max-w-full overflow-hidden"
+              className="flex items-center justify-center rounded-md bg-neutral-800 p-4 mt-10 max-w-full overflow-hidden"
             >
-              <section className="w-full text-white overflow-x-auto">
+              <section className="md:w-full w-90 text-white overflow-x-auto">
                 <GitHubCalendar
                   username="rubensqueiroz863"
                   year={year}
                   blockRadius={2}
-                  fontSize={18}
+                  fontSize={window.innerWidth < 640 ? 14 : 18}
                   blockMargin={4}
                 />
               </section>
