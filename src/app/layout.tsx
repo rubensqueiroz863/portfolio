@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import NavBar from "./components/NavBar";
 import { NextIntlClientProvider } from "next-intl";
 
 const geistSans = Geist({
@@ -30,7 +29,7 @@ export default function RootLayout({
         className={`bg-[#0F0F0F] overflow-x-hidden custom-scroll ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NextIntlClientProvider>
-          <NavBar />
+          
           {children}
         </NextIntlClientProvider>
       </body>

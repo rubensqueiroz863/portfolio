@@ -6,6 +6,8 @@ import { motion } from 'framer-motion';
 import GenericLink from './components/SocialMediaButton';
 import { ScienceGothic } from '../lib/fonts';
 import { useEffect, useState } from 'react';
+import { useTranslations } from 'next-intl';
+import NavBar from './components/NavBar';
 
 // Pega o github calendar de forma dinâmica e faz importação do GitHubCalendar, renderiza no client
 const GitHubCalendar = dynamic(
@@ -29,9 +31,14 @@ export default function HomePage() {
     }
   }, []);
 
+  // Traduções
+  const traslation = useTranslations("HomePage");
+
   return (
     // Div principal do conteúdo
     <div className="relative w-full min-h-screen bg-[#0F0F0F]">
+      { /* Navbar */}
+      <NavBar />
       {/* Overlay granulado svg*/}
       <svg
         className="pointer-events-none fixed inset-0 w-full min-h-full opacity-[0.1]"
@@ -62,7 +69,7 @@ export default function HomePage() {
               transition={{ duration: 0.5 }}
               className={`text-[#F5F5F5] md:text-4xl text-[23px] ${ScienceGothic.className}`}
             >
-              Full-Stack Software Engineer (Next.js & Spring Boot)
+              {traslation("title")}
             </motion.p>
             {/* Descrição */}
             <motion.p
@@ -71,8 +78,7 @@ export default function HomePage() {
               transition={{ duration: 0.5 }}
               className="text-[#B0B0B0] md:text-[16px] text-[14px]"
             >
-              I'm Rubens Q. Alves, a Full-Stack Software Engineer (Next.js & Spring Boot)
-              passionate about learning and building open-source software.
+              {traslation("description")}
             </motion.p>
             {/* Social Links */}
             <motion.div

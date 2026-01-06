@@ -3,14 +3,20 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import NavBar from "../components/NavBar";
+import { useTranslations } from "next-intl";
 
 export default function AboutPage() {
   // Router para navegação de pages
   const router = useRouter();
-
+  //Traduções
+  const translation = useTranslations("AboutPage");
+  
   return (
     // Div principal
     <div className="relative bg-[#0F0F0F] h-screen text-[#F5F5F5]">
+      { /* Navbar */}
+      <NavBar />
       { /* layout granulado svg */}
       <svg
         className="pointer-events-none fixed inset-0 w-full min-h-full opacity-[0.1]"
@@ -47,7 +53,7 @@ export default function AboutPage() {
             onClick={() => router.push("/")}
             className="relative cursor-pointer hover:bg-[#3A3A3A] flex transition-all items-center w-68 h-10 text-[#F5F5F5] rounded-md bg-[#1C1C1C] border-[0.1] border-[#2A2A2A]"
           >
-            <p className="absolute left-1/2 -translate-x-1/2">view resumé</p>
+            <p className="absolute left-1/2 -translate-x-1/2">{translation("resuméButton")}</p>
             <Image
               src={"https://i.postimg.cc/x8XsLDj1/external-link-icon-white.png"}
               width={128}
