@@ -49,8 +49,8 @@ export default function AboutPage() {
         { /* Div dos botões sobre o resumé */}
         <div className="flex gap-2">
           { /* Botão que leva ao resumé */}
-          <button 
-            onClick={() => router.push("/")}
+          <Link 
+            href={"https://s.craft.me/CnNhwPIVj6zztw"}
             className="relative cursor-pointer hover:bg-[#3A3A3A] flex transition-all items-center w-68 h-10 text-[#F5F5F5] rounded-md bg-[#1C1C1C] border-[0.1] border-[#2A2A2A]"
           >
             <p className="absolute left-1/2 -translate-x-1/2">{translation("resuméButton")}</p>
@@ -61,9 +61,12 @@ export default function AboutPage() {
               alt="redirect to my resume | Ir para meu resumo"
               className="w-5 h-5 absolute right-3"        
             />
-          </button>
+          </Link>
           { /* Botão que faz download do resumé */}
-          <button className="w-10 flex justify-center items-center h-10 hover:bg-[#3A3A3A] transition-all cursor-pointer bg-[#1C1C1C] border-[0.1] border-[#2A2A2A] rounded-md">
+          <Link
+            href={"https://drive.google.com/file/d/1WEv7jgRNHhU2uaGy_Gh1qJv3ge9NCVaY/view?usp=drive_link"} 
+            className="w-10 flex justify-center items-center h-10 hover:bg-[#3A3A3A] transition-all cursor-pointer bg-[#1C1C1C] border-[0.1] border-[#2A2A2A] rounded-md"
+          >
             <Image
               src={"https://i.postimg.cc/Hx9wYQt7/downloading-updates-xxl.png"}
               width={128}
@@ -71,7 +74,7 @@ export default function AboutPage() {
               alt="Download Button | Botão de Download"
               className="w-4.5 h-4.5"
             />
-          </button>
+          </Link>
         </div>
         { /* Link que leva ao email */}
         <Link 
