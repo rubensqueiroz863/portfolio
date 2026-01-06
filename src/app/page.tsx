@@ -31,10 +31,10 @@ export default function HomePage() {
 
   return (
     // Div principal do conteúdo
-    <div className="relative w-full min-h-screen bg-neutral-900">
+    <div className="relative w-full min-h-screen bg-[#0F0F0F]">
       {/* Overlay granulado svg*/}
       <svg
-        className="pointer-events-none fixed inset-0 w-screen h-screen opacity-[0.1]"
+        className="pointer-events-none fixed inset-0 w-full min-h-full opacity-[0.1]"
         xmlns="http://www.w3.org/2000/svg"
       >
         <filter id="noise">
@@ -50,7 +50,7 @@ export default function HomePage() {
       {/* Conteúdo principal */}
       <div className="relative z-10">
         {/* Linha divisora da navbar */}
-        <div className="w-full h-px bg-neutral-700" />
+        <div className="w-full h-px bg-[#2A2A2A]" />
         { /* Conteúdo */ }
         <div className="flex mb-10 flex-col xl:flex-row items-center px-6 md:px-10 xl:px-20 mt-15 md:mt-30 gap-10 xl:gap-80">
           {/* Textos, Links e Calendario github*/}
@@ -60,7 +60,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className={`text-white md:text-4xl text-[23px] ${ScienceGothic.className}`}
+              className={`text-[#F5F5F5] md:text-4xl text-[23px] ${ScienceGothic.className}`}
             >
               Full-Stack Software Engineer (Next.js & Spring Boot)
             </motion.p>
@@ -69,7 +69,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-neutral-400 md:text-[16px] text-[14px]"
+              className="text-[#B0B0B0] md:text-[16px] text-[14px]"
             >
               I'm Rubens Q. Alves, a Full-Stack Software Engineer (Next.js & Spring Boot)
               passionate about learning and building open-source software.
@@ -113,9 +113,9 @@ export default function HomePage() {
             </motion.div>
             {/* Calendario GitHub */}
             <div
-              className="flex items-center justify-center rounded-md bg-neutral-800 p-4 mt-10 max-w-full overflow-hidden"
+              className="flex items-center justify-center rounded-md bg-[#1C1C1C] p-4 mt-10 max-w-full overflow-hidden"
             >
-              <section className="md:w-full w-90 text-white overflow-x-auto">
+              <section className="md:w-full w-90 text-[#F5F5F5] overflow-x-auto">
                 <GitHubCalendar
                   username="rubensqueiroz863"
                   year={year}
@@ -131,10 +131,10 @@ export default function HomePage() {
                 <button
                   key={y}
                   onClick={() => setYear(y)}
-                  className={`px-5 py-[5px] rounded-md text-[16px] transition-all
+                  className={`px-5 cursor-pointer py-[5px] rounded-md text-[16px] transition-all
                     ${year === y 
-                      ? 'bg-green-600 border text-neutral-900 border-neutral-500' 
-                      : 'bg-neutral-800 text-white hover:border-neutral-700 border border-transparent'}
+                      ? 'bg-[#22C55E] border text-[#0F0F0F] border-[#3A3A3A]' 
+                      : 'bg-[#1C1C1C] text-[#F5F5F5] hover:border-[#3A3A3A] border border-transparent'}
                   `}
                 >
                   {y}

@@ -10,10 +10,10 @@ export default function AboutPage() {
 
   return (
     // Div principal
-    <div className="relative bg-neutral-900 h-screen text-white">
+    <div className="relative bg-[#0F0F0F] h-screen text-[#F5F5F5]">
       { /* layout granulado svg */}
       <svg
-        className="pointer-events-none absolute inset-0 w-full min-h-full opacity-[0.1]"
+        className="pointer-events-none fixed inset-0 w-full min-h-full opacity-[0.1]"
         xmlns="http://www.w3.org/2000/svg"
       >
         <filter id="noise">
@@ -27,7 +27,7 @@ export default function AboutPage() {
         <rect width="100%" height="100%" filter="url(#noise)" />
       </svg>
       { /* Separador da navbar */}
-      <div className="w-full h-[0.1] bg-neutral-700"></div>
+      <div className="w-full h-[0.1] bg-[#2A2A2A]"></div>
       { /* Conteúdo principal */}
       <div className="flex py-20 px-20 gap-4 justify-center flex-col">
         { /* Minha foto de perfil */}
@@ -45,7 +45,7 @@ export default function AboutPage() {
           { /* Botão que leva ao resumé */}
           <button 
             onClick={() => router.push("/")}
-            className="relative cursor-pointer shadow-md hover:bg-neutral-500 flex transition-all items-center w-68 h-10 text-white rounded-md bg-neutral-800"
+            className="relative cursor-pointer hover:bg-[#3A3A3A] flex transition-all items-center w-68 h-10 text-[#F5F5F5] rounded-md bg-[#1C1C1C] border-[0.1] border-[#2A2A2A]"
           >
             <p className="absolute left-1/2 -translate-x-1/2">view resumé</p>
             <Image
@@ -57,7 +57,7 @@ export default function AboutPage() {
             />
           </button>
           { /* Botão que faz download do resumé */}
-          <button className="w-10 flex justify-center items-center h-10 hover:bg-neutral-500 transition-all cursor-pointer bg-neutral-800 shadow-md rounded-md">
+          <button className="w-10 flex justify-center items-center h-10 hover:bg-[#3A3A3A] transition-all cursor-pointer bg-[#1C1C1C] border-[0.1] border-[#2A2A2A] rounded-md">
             <Image
               src={"https://i.postimg.cc/Hx9wYQt7/downloading-updates-xxl.png"}
               width={128}
@@ -69,7 +69,7 @@ export default function AboutPage() {
         </div>
         { /* Link que leva ao email */}
         <Link 
-          className="group flex w-20  hover:text-neutral-500 transition-all gap-2 items-center"
+          className="group flex w-20 text-[#F5F5F5] hover:text-[#B0B0B0] transition-all gap-2 items-center"
           href={"mailto:rubensqueiroz863@gmail.com"}
         >
           <Image
@@ -79,7 +79,7 @@ export default function AboutPage() {
             alt="My email | Meu email"
             className="w-5 h-auto"
           />
-          <p className="mb-1"> rubensqueiroz863@gmail.com</p>
+          <p className="mb-1">rubensqueiroz863@gmail.com</p>
         </Link>
       </div>
     </div>
