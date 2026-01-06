@@ -12,24 +12,10 @@ const navItems = [
 export default function NavBar() {
   return (
     // Header principal
-    <header className="w-full bg-neutral-900">
+    <header className="w-full bg-[#0F0F0F]">
       { /* Conteúdo principal */}
-      <nav className="flex items-center justify-between h-20 px-4 md:px-12 xl:px-2 text-white max-w-7xl mx-auto">
-        { /* Layout granulado svg */}
-        <svg
-          className="pointer-events-none absolute inset-0 w-full min-h-full opacity-[0.1]"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <filter id="noise">
-            <feTurbulence
-              type="fractalNoise"
-              baseFrequency="0.8"
-              numOctaves="4"
-              stitchTiles="stitch"
-            />
-          </filter>
-          <rect width="100%" height="100%" filter="url(#noise)" />
-        </svg>
+      <nav className="flex items-center justify-between h-20 px-4 md:px-12 xl:px-2 text-[#F5F5F5] max-w-7xl mx-auto">
+        
         {/* Logo (manda para homepage) */}
         <Link href="/" className=" p-0.5 transition-all">
           <span className="">
@@ -48,7 +34,7 @@ export default function NavBar() {
             <li key={item.href}>
               <Link
                 href={item.href}
-                className="text-sm md:text-md xl:text-[15px] tracking-wide hover:text-neutral-400 transition-colors"
+                className="text-sm md:text-[15px] xl:text-[16px] tracking-wide hover:text-[#B0B0B0] transition-colors"
               >
                 {item.label}
               </Link>
