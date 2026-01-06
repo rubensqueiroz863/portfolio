@@ -1,15 +1,16 @@
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
-// Items usados no map do naviagation
-const navItems = [
-  { label: "About", href: "/about" },
-  { label: "Projects", href: "/projects" },
-  { label: "Blog", href: "/blog" },
-  { label: "Photos", href: "/photos" },
-];
+type NavItem = {
+  label: string;
+  href: string;
+};
 
 export default function NavBar() {
+  const translation = useTranslations("NavBar");
+  const navItems = translation.raw("items") as NavItem[];
+
   return (
     // Header principal
     <header className="w-full bg-[#0F0F0F]">

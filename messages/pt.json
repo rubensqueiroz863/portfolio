@@ -1,5 +1,17 @@
 {
   "HomePage": {
-    "title": "Ola Mundo!"
-  }
+    "title": "Engenheiro de Software Full-Stack (Next.js & Spring Boot)",
+    "description": "Meu nome é Rubens Q. Alves, engenheiro de software full-stack que trabalha com Next.js e Spring Boot, com forte foco em arquitetura de backend, APIs e aplicações web escaláveis."
+  },
+  "NavBar": {
+    "items": [
+      { "label": "Sobre", "href": "/about" },
+      { "label": "Projetos", "href": "/projects" },
+      { "label": "Blog", "href": "/blog" },
+      { "label": "Fotos", "href": "/photos" }
+    ]
+  },
+  "AboutPage": {
+   "resuméButton": "Ver currículo"
+  } 
 }
