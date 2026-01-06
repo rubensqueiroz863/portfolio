@@ -1,8 +1,9 @@
+import { getLocale } from '@/lib/getLocale';
 import {getRequestConfig} from 'next-intl/server';
  
 export default getRequestConfig(async () => {
-  // Static for now, we'll change this later
-  const locale = 'pt';
+  // Pega a localização pelo getLocale
+  const locale = await getLocale();
  
   return {
     locale,
