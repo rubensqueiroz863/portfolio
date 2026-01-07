@@ -36,7 +36,7 @@ export default function HomePage() {
 
   return (
     // Div principal do conteúdo
-    <div className="relative w-full min-h-screen bg-[#0F0F0F]">
+    <div className="relative w-full min-h-screen bg-[#F8FAFC] dark:bg-[#0F0F0F]">
       { /* Navbar */}
       <NavBar />
       {/* Overlay granulado svg*/}
@@ -57,7 +57,7 @@ export default function HomePage() {
       {/* Conteúdo principal */}
       <div className="relative z-10">
         {/* Linha divisora da navbar */}
-        <div className="w-full h-px bg-[#2A2A2A]" />
+        <div className="w-full h-px bg-[#E2E8F0] dark:bg-[#2A2A2A]" />
         { /* Conteúdo */ }
         <div className="flex mb-10 flex-col xl:flex-row items-center px-6 md:px-10 xl:px-20 mt-15 md:mt-20 gap-10 xl:gap-80">
           {/* Textos, Links e Calendario github*/}
@@ -67,7 +67,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className={`text-[#F5F5F5] md:text-4xl text-[23px] ${ScienceGothic.className}`}
+              className={`text-[#0F172A] dark:text-[#F5F5F5] md:text-4xl text-[23px] ${ScienceGothic.className}`}
             >
               {traslation("title")}
             </motion.p>
@@ -76,7 +76,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-[#B0B0B0] md:text-[16px] text-[14px]"
+              className="text-[#334155] dark:text-[#B0B0B0] md:text-[16px] text-[14px]"
             >
               {traslation("description")}
             </motion.p>
@@ -109,19 +109,28 @@ export default function HomePage() {
               transition={{ duration: 0.5 }}
               className="xl:hidden"
             >
+              { /* tema escuro */}
               <Image
                 src="https://i.postimg.cc/CxRgT7s9/pattern-lines-2.png"
                 width={512}
                 height={512}
                 alt="Geometric cubes wireframe"
-                className="w-40 md:w-60 h-auto"
+                className="w-40 hidden dark:flex md:w-60 h-auto"
+              />
+              { /* tema claro (temporário) */}
+              <Image
+                src="https://i.postimg.cc/J4jBnBW1/66bfcd68852f621b3819eb99-tech-illustration.png"
+                width={512}
+                height={512}
+                alt="Geometric cubes wireframe"
+                className="w-45 dark:hidden md:w-60 h-auto"
               />
             </motion.div>
             {/* Calendario GitHub */}
             <div
-              className="flex items-center justify-center rounded-md bg-[#1C1C1C] p-4 mt-10 max-w-full overflow-hidden"
+              className="flex items-center justify-center rounded-md bg-[#FFFFFF] dark:bg-[#1C1C1C] p-4 mt-10 max-w-full overflow-hidden"
             >
-              <section className="md:w-full w-80 text-[#F5F5F5] overflow-x-auto">
+              <section className="md:w-full w-80 text-[#0F172A] dark:text-[#F5F5F5] overflow-x-auto">
                 <GitHubCalendar
                   username="rubensqueiroz863"
                   year={year}
@@ -139,8 +148,8 @@ export default function HomePage() {
                   onClick={() => setYear(y)}
                   className={`px-5 cursor-pointer py-[5px] rounded-md text-[16px] transition-all
                     ${year === y 
-                      ? 'bg-[#22C55E] border text-[#0F0F0F] border-[#3A3A3A]' 
-                      : 'bg-[#1C1C1C] text-[#F5F5F5] hover:border-[#3A3A3A] border border-transparent'}
+                      ? 'bg-[#16A34A] dark:bg-[#22C55E] border text-[#F8FAFC] dark:text-[#0F0F0F] border-[#CBD5E1] dark:border-[#3A3A3A]' 
+                      : 'bg-[#FFFFFF] dark:bg-[#1C1C1C] text-[#0F172A] dark:text-[#F5F5F5] dark:hover:border-[#3A3A3A] hover:border-[#CBD5E1] border border-transparent'}
                   `}
                 >
                   {y}

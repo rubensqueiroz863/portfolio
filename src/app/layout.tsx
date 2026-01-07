@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`bg-[#0F0F0F] overflow-x-hidden custom-scroll ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`bg-[#F8FAFC] dark:bg-[#0F0F0F] overflow-x-hidden custom-scroll dark:dark-custom-scroll ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NextIntlClientProvider>
           
