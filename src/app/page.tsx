@@ -19,7 +19,7 @@ export default function HomePage() {
   // Pega o ano atual para o github calendar
   const currentYear = new Date().getFullYear();
   const [year, setYear] = useState(currentYear);
-  const years = [2025];
+  const years = [2026, 2025];
 
   // useState para mudar o tamanho da fonte
   const [fontSize, setFontSize] = useState(18);
@@ -59,7 +59,7 @@ export default function HomePage() {
         {/* Linha divisora da navbar */}
         <div className="w-full h-px bg-[#2A2A2A]" />
         { /* Conteúdo */ }
-        <div className="flex mb-10 flex-col xl:flex-row items-center px-6 md:px-10 xl:px-20 mt-15 md:mt-30 gap-10 xl:gap-80">
+        <div className="flex mb-10 flex-col xl:flex-row items-center px-6 md:px-10 xl:px-20 mt-15 md:mt-20 gap-10 xl:gap-80">
           {/* Textos, Links e Calendario github*/}
           <div className="flex flex-col gap-6 max-w-2xl">
             {/* Titulo */}
@@ -114,14 +114,14 @@ export default function HomePage() {
                 width={512}
                 height={512}
                 alt="Geometric cubes wireframe"
-                className="w-60 h-auto"
+                className="w-40 md:w-60 h-auto"
               />
             </motion.div>
             {/* Calendario GitHub */}
             <div
               className="flex items-center justify-center rounded-md bg-[#1C1C1C] p-4 mt-10 max-w-full overflow-hidden"
             >
-              <section className="md:w-full w-90 text-[#F5F5F5] overflow-x-auto">
+              <section className="md:w-full w-80 text-[#F5F5F5] overflow-x-auto">
                 <GitHubCalendar
                   username="rubensqueiroz863"
                   year={year}
