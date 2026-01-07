@@ -13,5 +13,8 @@
   },
   "AboutPage": {
    "resuméButton": "Ver currículo"
-  } 
+  },
+  "Footer": {
+    "copyright": "Direitos autorais © Rubens Q. ALves 2026. Todos os direitos reservados."
+  }
 }

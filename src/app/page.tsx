@@ -8,6 +8,8 @@ import { ScienceGothic } from '../lib/fonts';
 import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
+
 
 // Pega o github calendar de forma dinâmica e faz importação do GitHubCalendar, renderiza no client
 const GitHubCalendar = dynamic(
@@ -174,6 +176,10 @@ export default function HomePage() {
           </motion.div>
         </div>
       </div>
+      {/* Linha divisora do footer */}
+      <div className="w-full h-px bg-[#E2E8F0] dark:bg-[#2A2A2A] mt-30 md:mt-35" />
+      { /* Rodapé da pagina */ }
+      <Footer />
     </div>
   );
 }

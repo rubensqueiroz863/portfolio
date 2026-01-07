@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import NavBar from "../components/NavBar";
 import { useTranslations } from "next-intl";
+import Footer from "../components/Footer";
 
 export default function AboutPage() {
   // Router para navegação de pages
@@ -100,6 +101,10 @@ export default function AboutPage() {
           <p className="mb-1">rubensqueiroz863@gmail.com</p>
         </Link>
       </div>
+      { /* Linha divisora do footer */}
+      <div className="w-full h-px bg-[#E2E8F0] dark:bg-[#2A2A2A] mt-30 md:mt-35" />
+      { /* Rodapé da pagina */ }
+      <Footer />
     </div>
   )
 }
