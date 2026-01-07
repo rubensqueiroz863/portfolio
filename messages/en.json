@@ -13,5 +13,8 @@
   },
   "AboutPage": {
    "resuméButton": "View resumé"
-  } 
+  },
+  "Footer": {
+    "copyright": "Copyright © Rubens Q. Alves 2026 All rights Reserved"
+  }
 }
