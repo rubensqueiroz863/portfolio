@@ -1,24 +1,48 @@
 @import "tailwindcss";
 
+.dark-custom-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dark-custom-scroll::-webkit-scrollbar-track {
+  background: #222;
+}
+
+.dark-custom-scroll::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 8px;
+}
+
+.dark-custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+/* Firefox */
+.dark-custom-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #555 #222;
+}
+
+/* Webkit (Chrome, Edge, Safari) */
 .custom-scroll::-webkit-scrollbar {
   width: 8px;
 }
 
 .custom-scroll::-webkit-scrollbar-track {
-  background: #222;
+  background: #F1F5F9; /* background secundário */
 }
 
 .custom-scroll::-webkit-scrollbar-thumb {
-  background: #555;
+  background: #CBD5E1; /* borda hover / divisória */
   border-radius: 8px;
 }
 
 .custom-scroll::-webkit-scrollbar-thumb:hover {
-  background: #666;
+  background: #94A3B8; /* texto muted */
 }
 
 /* Firefox */
 .custom-scroll {
   scrollbar-width: thin;
-  scrollbar-color: #555 #222;
+  scrollbar-color: #CBD5E1 #F1F5F9;
 }
