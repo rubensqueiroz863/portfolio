@@ -15,7 +15,7 @@ export default function NavBar() {
     // Header principal
     <header className="w-full bg-[#0F0F0F]">
       { /* Conteúdo principal */}
-      <nav className="flex items-center justify-between h-20 px-4 md:px-12 xl:px-2 text-[#F5F5F5] max-w-7xl mx-auto">
+      <nav className="flex items-center justify-between h-16 md:h-18 px-6 md:px-12 xl:px-2 text-[#F5F5F5] max-w-7xl mx-auto">
         
         {/* Logo (manda para homepage) */}
         <Link href="/" className=" p-0.5 transition-all">
