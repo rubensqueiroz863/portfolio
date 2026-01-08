@@ -65,20 +65,20 @@ export default function HomePage() {
           {/* Textos, Links e Calendario github*/}
           <div className="flex flex-col gap-6 max-w-2xl">
             {/* Titulo */}
-            <motion.p
+            <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               className={`text-[#0F172A] dark:text-[#F5F5F5] md:text-4xl text-[23px] ${ScienceGothic.className}`}
             >
               {traslation("title")}
-            </motion.p>
+            </motion.h1>
             {/* Descrição */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-[#334155] dark:text-[#B0B0B0] md:text-[16px] text-[14px]"
+              className="text-[#334155] dark:text-[#B0B0B0] md:text-[16px] text-[15px]"
             >
               {traslation("description")}
             </motion.p>

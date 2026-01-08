@@ -12,7 +12,15 @@
     ]
   },
   "AboutPage": {
-   "resuméButton": "View resumé"
+   "resuméButton": "View resumé",
+   "title": "I'm Rubens Q. Alves, developer in Brazil.",
+   "description1": "I’m a self-motivated software developer focused on full-stack web development and open-source. I enjoy building interactive, well-structured web applications, with a strong emphasis on the client side. My main tools include JavaScript, TypeScript, Next.js, and Spingboot.",
+   "description2": "I believe continuous learning comes from experience, so I try to take something valuable from every situation — even the challenging ones.",
+   "section1": "Skills",
+   "list1": "I enjoy refining designs and UIs with care and precision, focusing on delivering polished results rather than simply shipping more features.",
+   "list2": "I use Next.js to build fast, scalable web applications, taking advantage of features like server-side rendering, static generation, and the App Router to improve performance, SEO, and overall user experience.",
+   "list3": "I use Spring Boot to develop robust and scalable backend applications, building well-structured, secure, and maintainable APIs with a focus on performance, code organization, and best practices.",
+   "section2": "Technologies"
   },
   "Footer": {
     "copyright": "Copyright © Rubens Q. Alves 2026 All rights Reserved"

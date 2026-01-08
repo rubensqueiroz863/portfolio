@@ -12,7 +12,15 @@
     ]
   },
   "AboutPage": {
-   "resuméButton": "Ver currículo"
+   "resuméButton": "Ver currículo",
+   "title": "Sou Rubens Q. Alves, desenvolvedor no Brasil.",
+   "description1": "Sou um desenvolvedor de software autodidata e motivado, focado em desenvolvimento web full-stack e código aberto. Gosto de criar aplicações web interativas e bem estruturadas, com forte ênfase no lado do cliente. Minhas principais ferramentas incluem JavaScript, TypeScript, Next.js e Spring Boot.",
+   "description2": "Acredito que o aprendizado contínuo vem da experiência, por isso procuro extrair algo valioso de toda situação — até mesmo das mais desafiadoras.",
+   "section1": "Habilidades",
+   "list1": "Gosto de lapidar designs e interfaces com cuidado e precisão, focando em entregar resultados bem acabados em vez de apenas lançar mais funcionalidades.",
+   "list2": "Utilizo o Next.js para desenvolver aplicações web rápidas e escaláveis, aproveitando recursos como renderização no lado do servidor, geração estática e o App Router para melhorar desempenho, SEO e a experiência geral do usuário.",
+   "list3": "Utilizo o Spring Boot para desenvolver aplicações backend robustas e escaláveis, criando APIs bem estruturadas, seguras e fáceis de manter, com foco em desempenho, organização do código e boas práticas.",
+   "section2": "Tecnologias"
   },
   "Footer": {
     "copyright": "Direitos autorais © Rubens Q. ALves 2026. Todos os direitos reservados."
