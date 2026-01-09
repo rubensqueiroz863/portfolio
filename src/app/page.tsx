@@ -117,7 +117,7 @@ export default function HomePage() {
                 width={512}
                 height={512}
                 alt="Geometric cubes wireframe"
-                className="w-40 hidden dark:flex md:w-60 h-auto"
+                className="w-45 hidden dark:flex md:w-50 h-auto"
               />
               { /* tema claro (temporário) */}
               <Image
@@ -129,8 +129,19 @@ export default function HomePage() {
               />
             </motion.div>
             {/* Calendario GitHub */}
-            <div
-              className="flex items-center justify-center rounded-md bg-[#FFFFFF] dark:bg-[#1C1C1C] p-4 mt-10 max-w-full overflow-hidden"
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className={`text-[#0F172A] mt-8 dark:text-[#F5F5F5] md:text-2xl text-[20px] ${ScienceGothic.className}`}
+            >
+              {traslation("githubTitle")}
+            </motion.h1>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="flex items-center justify-center rounded-md bg-[#FFFFFF] dark:bg-[#1C1C1C] p-4 max-w-full overflow-hidden"
             >
               <section className="md:w-full w-80 text-[#0F172A] dark:text-[#F5F5F5] overflow-x-auto">
                 <GitHubCalendar
@@ -141,9 +152,14 @@ export default function HomePage() {
                   blockMargin={4}
                 />
               </section>
-            </div>
+            </motion.div>
             { /* Botões de seleções dos anos do calendario github usando map de forma dinâmica */}
-            <div className="flex gap-2 flex-wrap">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="flex gap-2 flex-wrap"
+            >
               {years.map((y) => (
                 <button
                   key={y}
@@ -157,7 +173,7 @@ export default function HomePage() {
                   {y}
                 </button>
               ))}
-            </div>
+            </motion.div>
           </div>
           {/* Desktop image */}
           <motion.div
