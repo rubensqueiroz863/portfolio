@@ -2,15 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import NavBar from "../components/NavBar";
 import { useTranslations } from "next-intl";
 import Footer from "../components/Footer";
 import { ScienceGothic } from "@/lib/fonts";
+import { motion } from "framer-motion";
 
 export default function AboutPage() {
-  // Router para navegação de pages
-  const router = useRouter();
   //Traduções
   const translation = useTranslations("AboutPage");
   
@@ -39,7 +37,11 @@ export default function AboutPage() {
       { /* Conteúdo principal */}
       <div className="flex py-20 xl:px-80 gap-4 justify-center xl:flex-row flex-col">
         { /* Minha foto de perfil */}
-        <div className="flex xl:order-2 xl:mb-0 md:mb-8 justify-center px-10 md:px-20 flex-col gap-4 md:justify-start">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="flex xl:order-2 xl:mb-0 md:mb-8 justify-center px-10 md:px-20 flex-col gap-4 md:justify-start">
           <Image
             src={"https://i.postimg.cc/Bv8DS8hf/IMG-20260107-231209521.png"}
             width={800}
@@ -100,21 +102,41 @@ export default function AboutPage() {
             />
             <p className="mb-1">rubensqueiroz863@gmail.com</p>
           </Link>
-        </div>
+        </motion.div>
         { /* Div com texto sobre */}
         <div className="flex xl:order-1 flex-col w-full px-10 md:pl-20 gap-8 xl:pl-0">
-          <h1 
+          { /* Titulo */}
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
             className={`text-[#0F172A] xl:w-xl w-90 md:w-2xl dark:text-[#F5F5F5] md:text-[28px] text-[24px] ${ScienceGothic.className}`}
           >
-            {translation("title")}</h1>
-          <p className="text-[#334155] dark:text-[#B0B0B0] md:text-[16px] text-[15px]">
+            {translation("title")}
+          </motion.h1>
+          { /* Descrições */ }
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-[#334155] dark:text-[#B0B0B0] md:text-[16px] text-[15px]"
+          >
             {translation("description1")}
-          </p>
-          <p className="text-[#334155] dark:text-[#B0B0B0] md:text-[16px] text-[15px]">
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-[#334155] dark:text-[#B0B0B0] md:text-[16px] text-[15px]"
+          >
             {translation("description2")}
-          </p>
+          </motion.p>
           { /* Seção com as habilidades */}
-          <section>
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             <Link
               href={"/about#skills"}
               id="skills" 
@@ -127,9 +149,13 @@ export default function AboutPage() {
               <li><strong className="text-[#0F172A] dark:text-[#F5F5F5] text-[17px]">Next.js</strong>: {translation("list2")}</li>
               <li><strong className="text-[#0F172A] dark:text-[#F5F5F5] text-[17px]">Spring Boot</strong>: {translation("list3")}</li>
             </ul> 
-          </section>  
+          </motion.section>  
           { /* Seção com tecnologias */}
-          <section >
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             <Link
               href={"/about#technologies"}
               id="technologies" 
@@ -229,7 +255,7 @@ export default function AboutPage() {
                 <p>- Java Framework</p>
               </div>
             </div> 
-          </section>
+          </motion.section>
         </div>
 
       </div>
