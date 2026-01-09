@@ -25,5 +25,9 @@
   },
   "Footer": {
     "copyright": "Direitos autorais © Rubens Q. ALves 2026. Todos os direitos reservados."
+  },
+  "ProjectsPage": {
+    "title": "Projetos",
+    "description": "Construí muitos projetos pequenos, mas estes são os que mais me orgulho. Muitos deles são open source, então fique à vontade para explorar o código, entender como tudo funciona e contribuir caso tenha ideias para melhorá-los."
   }
 }
