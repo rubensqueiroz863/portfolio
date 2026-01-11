@@ -91,17 +91,41 @@ export default function HomePage() {
             >
               { /* Github */}
               <GenericLink
-                href="https://github.com/rubensqueiroz863"
+                href="https://github.com/rubensqueiroz863/"
                 name="GitHub"
                 image="https://i.postimg.cc/BvtxsKyk/25231.png"
                 alt="My GitHub"
+                rounded="rounded-full bg-[#F8FAFC] dark:bg-[#B0B0B0]"
               />
               { /* Codepen */}
               <GenericLink
-                href="https://codepen.io/rubensqueiroz863"
+                href="https://codepen.io/rubensqueiroz863/"
                 name="Codepen"
                 image="https://i.postimg.cc/C5jb65sz/1907-codepen.png"
                 alt="My Codepen"
+                rounded="rounded-full bg-[#F8FAFC] dark:bg-[#B0B0B0]"
+              />
+              { /* Youtube */}
+              <GenericLink
+                href="https://www.youtube.com/@rubensqueirozdev863/"
+                name="YouTube"
+                image="https://i.postimg.cc/15dSrP8C/Youtube-logo.png"
+                alt="My Youtube"
+                rounded="rounded-sm bg-[#E2E8F0] dark:bg-[#2A2A2A] "
+              />
+              <GenericLink
+                href="https://www.instagram.com/rubensdevoficial/"
+                name="Instagram"
+                image="https://i.postimg.cc/LsJFqW9b/Instagram-logo-2022-svg.png"
+                alt="My Instagram"
+                rounded="rounded-md bg-[#F8FAFC] dark:bg-[#B0B0B0]"
+              />
+              <GenericLink
+                href="https://www.linkedin.com/in/rubensqueiroz863/"
+                name="LinkedIn"
+                image="https://i.postimg.cc/0Q1X8Xbc/174857.png"
+                alt="My LinkedIn"
+                rounded="rounded-md bg-[#F8FAFC] dark:bg-[#F8FAFC]"
               />
             </motion.div>
             {/* Mobile Image */}
