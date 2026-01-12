@@ -38,7 +38,7 @@ export default function AboutPage() {
       <div className="flex py-20 xl:px-80 gap-4 justify-center xl:flex-row flex-col">
         { /* Minha foto de perfil */}
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="flex xl:order-2 xl:mb-0 md:mb-8 justify-center px-10 md:px-20 flex-col gap-4 md:justify-start">
@@ -107,7 +107,7 @@ export default function AboutPage() {
         <div className="flex xl:order-1 flex-col w-full px-10 md:pl-20 gap-8 xl:pl-0">
           { /* Titulo */}
           <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className={`text-[#0F172A] xl:w-xl w-90 md:w-2xl dark:text-[#F5F5F5] md:text-[28px] text-[24px] ${ScienceGothic.className}`}
@@ -117,25 +117,28 @@ export default function AboutPage() {
           { /* Descrições */ }
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
             className="text-[#334155] dark:text-[#B0B0B0] md:text-[16px] text-[15px]"
           >
             {translation("description1")}
           </motion.p>
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
             className="text-[#334155] dark:text-[#B0B0B0] md:text-[16px] text-[15px]"
           >
             {translation("description2")}
           </motion.p>
           { /* Seção com as habilidades */}
           <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
           >
             <Link
               href={"/about#skills"}
@@ -152,9 +155,10 @@ export default function AboutPage() {
           </motion.section>  
           { /* Seção com tecnologias */}
           <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
           >
             <Link
               href={"/about#technologies"}

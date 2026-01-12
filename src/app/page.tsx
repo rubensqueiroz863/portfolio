@@ -66,7 +66,7 @@ export default function HomePage() {
           <div className="flex flex-col gap-6 max-w-2xl">
             {/* Titulo */}
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               className={`text-[#0F172A] dark:text-[#F5F5F5] md:text-4xl text-[23px] ${ScienceGothic.className}`}
@@ -75,7 +75,7 @@ export default function HomePage() {
             </motion.h1>
             {/* Descrição */}
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               className="text-[#334155] dark:text-[#B0B0B0] md:text-[16px] text-[15px]"
@@ -84,7 +84,7 @@ export default function HomePage() {
             </motion.p>
             {/* Social Links */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               className="md:flex grid grid-cols-4 grid-rows-4 gap-4 pt-4 mb-8"
@@ -130,7 +130,7 @@ export default function HomePage() {
             </motion.div>
             {/* Mobile Image */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               className="xl:hidden"
@@ -154,17 +154,19 @@ export default function HomePage() {
             </motion.div>
             {/* Calendario GitHub */}
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
               className={`text-[#0F172A] mt-8 dark:text-[#F5F5F5] md:text-2xl text-[20px] ${ScienceGothic.className}`}
             >
               {traslation("githubTitle")}
             </motion.h1>
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
               className="flex items-center justify-center rounded-md bg-[#FFFFFF] dark:bg-[#1C1C1C] p-4 max-w-full overflow-hidden"
             >
               <section className="md:w-full w-80 text-[#0F172A] dark:text-[#F5F5F5] overflow-x-auto">
@@ -179,9 +181,10 @@ export default function HomePage() {
             </motion.div>
             { /* Botões de seleções dos anos do calendario github usando map de forma dinâmica */}
             <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
               className="flex gap-2 flex-wrap"
             >
               {years.map((y) => (
@@ -201,7 +204,7 @@ export default function HomePage() {
           </div>
           {/* Desktop image */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="hidden xl:flex"
