@@ -53,7 +53,8 @@ export default function AboutPage() {
           <div className="flex gap-2">
             { /* Botão que leva ao resumé */}
             <Link 
-              href={"https://s.craft.me/CnNhwPIVj6zztw"}
+              href={"https://areas-repair-gg7.craft.me/jcQhTb83RFP2gW"}
+              target="_blank"
               className="relative cursor-pointer hover:bg-[#CBD5E1] dark:hover:bg-[#3A3A3A] flex transition-all items-center w-76 h-12 text-[#0F172A] dark:text-[#F5F5F5] rounded-md bg-[#FFFFFF] dark:bg-[#1C1C1C] border-[0.1] border-[#E2E8F0] dark:border-[#2A2A2A]"
             >
               <p className="absolute left-1/2 -translate-x-1/2">{translation("resuméButton")}</p>
@@ -69,6 +70,7 @@ export default function AboutPage() {
             <Link
               href={"https://drive.google.com/file/d/1WEv7jgRNHhU2uaGy_Gh1qJv3ge9NCVaY/view?usp=drive_link"} 
               className="w-12 flex justify-center items-center h-12 hover:bg-[#CBD5E1] dark:hover:bg-[#3A3A3A] transition-all cursor-pointer bg-[#FFFFFF] dark:bg-[#1C1C1C] border-[0.1] border-[#E2E8F0] dark:border-[#2A2A2A] rounded-md"
+              target="_blank"
             >
               { /* tema escuro */}
               <Image
