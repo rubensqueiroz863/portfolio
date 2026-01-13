@@ -14,7 +14,7 @@ export default function AboutPage() {
   
   return (
     // Div principal
-    <div className="relative bg-[#F8FAFC] dark:bg-[#0F0F0F] h-screen text-[#0F172A] dark:text-[#F5F5F5]">
+    <div className="relative bg-(--bg-main) h-screen text-(--text-main">
       { /* Navbar */}
       <NavBar />
       { /* layout granulado svg */}
@@ -33,7 +33,7 @@ export default function AboutPage() {
         <rect width="100%" height="100%" filter="url(#noise)" />
       </svg>
       { /* Separador da navbar */}
-      <div className="w-full h-[0.1] bg-[#E2E8F0] dark:bg-[#2A2A2A]"></div>
+      <div className="w-full h-px bg-(--soft-border)"></div>
       { /* Conteúdo principal */}
       <div className="flex py-20 xl:px-80 gap-4 justify-center xl:flex-row flex-col">
         { /* Minha foto de perfil */}
@@ -55,7 +55,7 @@ export default function AboutPage() {
             <Link 
               href={"https://areas-repair-gg7.craft.me/jcQhTb83RFP2gW"}
               target="_blank"
-              className="relative cursor-pointer hover:bg-[#CBD5E1] dark:hover:bg-[#3A3A3A] flex transition-all items-center w-76 h-12 text-[#0F172A] dark:text-[#F5F5F5] rounded-md bg-[#FFFFFF] dark:bg-[#1C1C1C] border-[0.1] border-[#E2E8F0] dark:border-[#2A2A2A]"
+              className="relative cursor-pointer hover:bg-(--hover-border) flex transition-all items-center w-76 h-12 text-(--text-main) rounded-md bg-(--bg-card) border-[0.1] border-(--soft-border)"
             >
               <p className="absolute left-1/2 -translate-x-1/2">{translation("resuméButton")}</p>
               <Image
@@ -69,7 +69,7 @@ export default function AboutPage() {
             { /* Botão que faz download do resumé */}
             <Link
               href={"https://drive.google.com/file/d/1WEv7jgRNHhU2uaGy_Gh1qJv3ge9NCVaY/view?usp=drive_link"} 
-              className="w-12 flex justify-center items-center h-12 hover:bg-[#CBD5E1] dark:hover:bg-[#3A3A3A] transition-all cursor-pointer bg-[#FFFFFF] dark:bg-[#1C1C1C] border-[0.1] border-[#E2E8F0] dark:border-[#2A2A2A] rounded-md"
+              className="w-12 flex justify-center items-center h-12 hover:bg-(--hover-border) transition-all cursor-pointer bg-(--bg-card) border-[0.1] border-(--soft-border) rounded-md"
               target="_blank"
             >
               { /* tema escuro */}
@@ -92,7 +92,7 @@ export default function AboutPage() {
           </div>
           { /* Link que leva ao email */}
           <Link 
-            className="group flex w-20 text-[#0F172A] dark:text-[#F5F5F5] hover:text-[#334155] dark:hover:text-[#B0B0B0] transition-all gap-2 items-center"
+            className="group flex w-20 text-(--text-main) hover:text-(--text-secondary) transition-all gap-2 items-center"
             href={"mailto:rubensqueiroz863@gmail.com"}
           >
             <Image
@@ -112,7 +112,7 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className={`text-[#0F172A] xl:w-xl w-90 md:w-2xl dark:text-[#F5F5F5] md:text-[28px] text-[24px] ${ScienceGothic.className}`}
+            className={`text-(--text-main) xl:w-xl w-90 md:w-2xl md:text-[28px] text-[24px] ${ScienceGothic.className}`}
           >
             {translation("title")}
           </motion.h1>
@@ -122,7 +122,7 @@ export default function AboutPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="text-[#334155] dark:text-[#B0B0B0] md:text-[16px] text-[15px]"
+            className="text-(--text-secondary) md:text-[16px] text-[15px]"
           >
             {translation("description1")}
           </motion.p>
@@ -131,7 +131,7 @@ export default function AboutPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="text-[#334155] dark:text-[#B0B0B0] md:text-[16px] text-[15px]"
+            className="text-(--text-secondary) md:text-[16px] text-[15px]"
           >
             {translation("description2")}
           </motion.p>
@@ -145,14 +145,14 @@ export default function AboutPage() {
             <Link
               href={"/about#skills"}
               id="skills" 
-              className={`text-[#0F172A] dark:text-[#F5F5F5] md:text-[28px] text-[24px] ${ScienceGothic.className}`}
+              className={`text-(--text-main) md:text-[28px] text-[24px] ${ScienceGothic.className}`}
             >
               {translation("section1")}
             </Link>
-            <ul className="flex flex-col list-disc gap-2 mt-6 px-5 text-[#334155] dark:text-[#B0B0B0] md:text-[16px] text-[15px]">
-              <li><strong className="text-[#0F172A] dark:text-[#F5F5F5] text-[17px]">Ui/Ux Design</strong>: {translation("list1")}</li>
-              <li><strong className="text-[#0F172A] dark:text-[#F5F5F5] text-[17px]">Next.js</strong>: {translation("list2")}</li>
-              <li><strong className="text-[#0F172A] dark:text-[#F5F5F5] text-[17px]">Spring Boot</strong>: {translation("list3")}</li>
+            <ul className="flex flex-col list-disc gap-2 mt-6 px-5 text-(--text-secondary) md:text-[16px] text-[15px]">
+              <li><strong className="text-(--text-main) text-[17px]">Ui/Ux Design</strong>: {translation("list1")}</li>
+              <li><strong className="text-(--text-main) text-[17px]">Next.js</strong>: {translation("list2")}</li>
+              <li><strong className="text-(--text-main) text-[17px]">Spring Boot</strong>: {translation("list3")}</li>
             </ul> 
           </motion.section>  
           { /* Seção com tecnologias */}
@@ -165,15 +165,15 @@ export default function AboutPage() {
             <Link
               href={"/about#technologies"}
               id="technologies" 
-              className={`text-[#0F172A] dark:text-[#F5F5F5] md:text-[28px] text-[24px] ${ScienceGothic.className}`}
+              className={`text-(--text-main) md:text-[28px] text-[24px] ${ScienceGothic.className}`}
             >
               {translation("section2")}
             </Link>
-            <div className="flex flex-col list-disc gap-2 mt-6 text-[#334155] dark:text-[#B0B0B0] md:text-[18px] text-[16px]">
+            <div className="flex flex-col list-disc gap-2 mt-6 text-(--text-secondary) md:text-[18px] text-[16px]">
               { /* React */}
               <div className="flex gap-2 items-center">
                 <Link 
-                  className="flex gap-2 items-center underline text-blue-400 hover:text-blue-500"
+                  className="flex gap-2 items-center underline text-(--link-color) hover:text-(--hover-link)"
                   href="https://react.dev/"
                   target="_blank"
                 >
@@ -191,7 +191,7 @@ export default function AboutPage() {
               { /* Next.js */}
               <div className="flex gap-2 items-center">
                 <Link 
-                  className="flex gap-2 items-center underline text-blue-400 hover:text-blue-500"
+                  className="flex gap-2 items-center underline text-(--link-color) hover:text-(--hover-link)"
                   href="https://nextjs.org/"
                   target="_blank"
                 >
@@ -209,7 +209,7 @@ export default function AboutPage() {
               { /* Tailwind CSS */}
               <div className="flex gap-2 items-center">
                 <Link 
-                  className="flex gap-2 items-center underline text-blue-400 hover:text-blue-500"
+                  className="flex gap-2 items-center underline text-(--link-color) hover:text-(--hover-link)"
                   href="https://tailwindcss.com/"
                   target="_blank"
                 >
@@ -227,7 +227,7 @@ export default function AboutPage() {
               { /* TypeScript */}
               <div className="flex gap-2 items-center">
                 <Link 
-                  className="flex gap-2 items-center underline text-blue-400 hover:text-blue-500"
+                  className="flex gap-2 items-center underline text-(--link-color) hover:text-(--hover-link)"
                   href="https://www.typescriptlang.org/"
                   target="_blank"
                 >
@@ -245,7 +245,7 @@ export default function AboutPage() {
               { /* Spring Boot */}
               <div className="flex gap-2 items-center">
                 <Link 
-                  className="flex gap-2 items-center underline text-blue-400 hover:text-blue-500"
+                  className="flex gap-2 items-center underline text-(--link-color) hover:text-(--hover-link)"
                   href="https://spring.io/projects/spring-boot"
                   target="_blank"
                 >
@@ -266,7 +266,7 @@ export default function AboutPage() {
 
       </div>
       { /* Linha divisora do footer */}
-      <div className="w-full h-px bg-[#E2E8F0] dark:bg-[#2A2A2A]" />
+      <div className="w-full h-px bg-(--hover-border)" />
       { /* Rodapé da pagina */ }
       <Footer />
     </div>
