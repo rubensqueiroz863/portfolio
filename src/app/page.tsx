@@ -38,7 +38,7 @@ export default function HomePage() {
 
   return (
     // Div principal do conteúdo
-    <div className="relative w-full min-h-screen bg-[#F8FAFC] dark:bg-[#0F0F0F]">
+    <div className="relative w-full min-h-screen bg-(--bg-main)">
       { /* Navbar */}
       <NavBar />
       {/* Overlay granulado svg*/}
@@ -59,7 +59,7 @@ export default function HomePage() {
       {/* Conteúdo principal */}
       <div className="relative z-10">
         {/* Linha divisora da navbar */}
-        <div className="w-full h-px bg-[#E2E8F0] dark:bg-[#2A2A2A]" />
+        <div className="w-full h-px bg-(--soft-border)" />
         { /* Conteúdo */ }
         <div className="flex mb-10 flex-col xl:flex-row items-center px-6 md:px-10 xl:px-20 mt-15 md:mt-20 gap-10 xl:gap-80">
           {/* Textos, Links e Calendario github*/}
@@ -69,7 +69,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className={`text-[#0F172A] dark:text-[#F5F5F5] md:text-4xl text-[23px] ${ScienceGothic.className}`}
+              className={`text-(--text-main) md:text-4xl text-[23px] ${ScienceGothic.className}`}
             >
               {traslation("title")}
             </motion.h1>
@@ -78,7 +78,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-[#334155] dark:text-[#B0B0B0] md:text-[16px] text-[15px]"
+              className="text-(--text-secondary) md:text-[16px] text-[15px]"
             >
               {traslation("description")}
             </motion.p>
@@ -95,7 +95,7 @@ export default function HomePage() {
                 name="GitHub"
                 image="https://i.postimg.cc/BvtxsKyk/25231.png"
                 alt="My GitHub"
-                rounded="rounded-full bg-[#F8FAFC] dark:bg-[#B0B0B0]"
+                rounded="rounded-full bg-[#F8FAFC]"
               />
               { /* Codepen */}
               <GenericLink
@@ -103,7 +103,7 @@ export default function HomePage() {
                 name="Codepen"
                 image="https://i.postimg.cc/C5jb65sz/1907-codepen.png"
                 alt="My Codepen"
-                rounded="rounded-full bg-[#F8FAFC] dark:bg-[#B0B0B0]"
+                rounded="rounded-full bg-[#F8FAFC]"
               />
               { /* Youtube */}
               <GenericLink
@@ -111,21 +111,21 @@ export default function HomePage() {
                 name="YouTube"
                 image="https://i.postimg.cc/15dSrP8C/Youtube-logo.png"
                 alt="My Youtube"
-                rounded="rounded-sm bg-[#E2E8F0] dark:bg-[#2A2A2A] "
+                rounded="rounded-sm bg-(--soft-border)"
               />
               <GenericLink
                 href="https://www.instagram.com/rubensdevoficial/"
                 name="Instagram"
                 image="https://i.postimg.cc/LsJFqW9b/Instagram-logo-2022-svg.png"
                 alt="My Instagram"
-                rounded="rounded-md bg-[#F8FAFC] dark:bg-[#B0B0B0]"
+                rounded="rounded-md bg-(--text-secondary)"
               />
               <GenericLink
                 href="https://www.linkedin.com/in/rubensqueiroz863/"
                 name="LinkedIn"
                 image="https://i.postimg.cc/0Q1X8Xbc/174857.png"
                 alt="My LinkedIn"
-                rounded="rounded-md bg-[#F8FAFC] dark:bg-[#F8FAFC]"
+                rounded="rounded-md bg-[#F8FAFC]"
               />
             </motion.div>
             {/* Mobile Image */}
@@ -158,7 +158,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className={`text-[#0F172A] mt-8 dark:text-[#F5F5F5] md:text-2xl text-[20px] ${ScienceGothic.className}`}
+              className={`text-(--text-main) mt-8 md:text-2xl text-[20px] ${ScienceGothic.className}`}
             >
               {traslation("githubTitle")}
             </motion.h1>
@@ -167,9 +167,9 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="flex items-center justify-center rounded-md bg-[#FFFFFF] dark:bg-[#1C1C1C] p-4 max-w-full overflow-hidden"
+              className="flex items-center justify-center rounded-md bg-(--bg-card) p-4 max-w-full overflow-hidden"
             >
-              <section className="md:w-full w-80 text-[#0F172A] dark:text-[#F5F5F5] overflow-x-auto">
+              <section className="md:w-full w-80 text-(--text-main) overflow-x-auto">
                 <GitHubCalendar
                   username="rubensqueiroz863"
                   year={year}
@@ -193,8 +193,8 @@ export default function HomePage() {
                   onClick={() => setYear(y)}
                   className={`px-5 cursor-pointer py-[5px] rounded-md text-[16px] transition-all
                     ${year === y 
-                      ? 'bg-[#16A34A] dark:bg-[#22C55E] border text-[#F8FAFC] dark:text-[#0F0F0F] border-[#CBD5E1] dark:border-[#3A3A3A]' 
-                      : 'bg-[#FFFFFF] dark:bg-[#1C1C1C] text-[#0F172A] dark:text-[#F5F5F5] dark:hover:border-[#3A3A3A] hover:border-[#CBD5E1] border border-transparent'}
+                      ? 'bg-(--success) border text-(--bg-main) border-(--hover-border)' 
+                      : 'bg-(--bg-card) text-(--text-main) hover:boder-(--hover-border) border border-transparent'}
                   `}
                 >
                   {y}
@@ -220,7 +220,7 @@ export default function HomePage() {
         </div>
       </div>
       {/* Linha divisora do footer */}
-      <div className="w-full h-px bg-[#E2E8F0] dark:bg-[#2A2A2A] mt-30 md:mt-35" />
+      <div className="w-full h-px bg-(--soft-border) mt-30 md:mt-35" />
       { /* Rodapé da pagina */ }
       <Footer />
     </div>
