@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import ThemeButton from "./ThemeButton";
 
 type NavItem = {
   label: string;
@@ -42,6 +43,7 @@ export default function NavBar() {
             </li>
           ))}
         </ul>
+        <ThemeButton />
       </nav>
     </header>
   );
