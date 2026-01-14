@@ -13,9 +13,9 @@ export default function NavBar() {
 
   return (
     // Header principal
-    <header className="w-full bg-[#F8FAFC] dark:bg-[#0F0F0F]">
+    <header className="w-full bg-(--bg-main)">
       { /* Conteúdo principal */}
-      <nav className="flex items-center justify-between h-16 md:h-18 px-6 md:px-12 xl:px-2 text-[#0F172A] dark:text-[#F5F5F5] max-w-7xl mx-auto">
+      <nav className="flex items-center justify-between h-16 md:h-18 px-6 md:px-12 xl:px-2 text-(--text-main) max-w-7xl mx-auto">
         
         {/* Logo (manda para homepage) */}
         <Link href="/" className=" p-0.5 transition-all">
@@ -35,7 +35,7 @@ export default function NavBar() {
             <li key={item.href}>
               <Link
                 href={item.href}
-                className="text-sm md:text-[15px] xl:text-[16px] tracking-wide hover:text-[#334155] dark:hover:text-[#B0B0B0] transition-colors"
+                className="text-sm md:text-[15px] xl:text-[16px] tracking-wide hover:text-(--text-secondary) transition-colors"
               >
                 {item.label}
               </Link>
