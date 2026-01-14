@@ -7,9 +7,10 @@ interface GenericLinkProps {
   name: string;
   image: string;
   alt: string;
+  rounded: string;
 }
 
-export default function GenericLink({ href, name, image, alt }: GenericLinkProps) {
+export default function GenericLink({ href, name, image, alt, rounded }: GenericLinkProps) {
   return (
     // Link que redireciona para respectivos links informado ao charmar o componente
     <Link
@@ -22,7 +23,7 @@ export default function GenericLink({ href, name, image, alt }: GenericLinkProps
         width={128}
         height={128}
         alt={alt}
-        className="w-5 h-5 bg-[#F8FAFC] dark:bg-[#B0B0B0] rounded-full object-cover transition-all group-hover:bg-[#CBD5E1] dark:group-hover:bg-[#F5F5F5]"
+        className={`w-5 h-auto ${rounded} object-contain transition-all group-hover:bg-[#CBD5E1] dark:group-hover:bg-[#F5F5F5]`}
       />
       { /* Nome da rede social */}
       <p>{name}</p>
