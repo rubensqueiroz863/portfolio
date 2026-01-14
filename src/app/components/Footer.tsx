@@ -5,7 +5,7 @@ export default function Footer() {
   const translation = useTranslations("Footer");
   return (
     <div className="flex items-center gap-2 flex-col text-[16px] md:text-[18px] md:px-0 px-16 justify-center pt-16 pb-12">
-      <p className="flex gap-2 items-center text-[#0F172A]/80 dark:text-[#F5F5F5]/80">
+      <p className="flex gap-2 items-center text-(--text-main)/80 dark:text-(--text-main)/80">
         Built with:
         <Image
           src={"https://i.postimg.cc/Zqc6YScN/nextjs-original.png"}
@@ -24,7 +24,7 @@ export default function Footer() {
         />
         Vercel
       </p>
-      <p className="text-sm text-center text-[#334155] dark:text-[#B0B0B0]">
+      <p className="text-sm text-center text-(--text-secondary)">
         {translation("copyright")}
       </p>
     </div>
