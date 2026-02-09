@@ -45,7 +45,7 @@ export default function ProjectsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-(--text-secondary) w-2xl md:text-[18px] text-[16px] mb-4"
+          className="text-(--text-secondary) xl:w-2xl xl:text-[18px] md:text-[17px] text-[15px] mb-4"
         >
           {traslation("description")}
         </motion.p>
