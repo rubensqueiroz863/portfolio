@@ -10,7 +10,7 @@ interface GenericLinkProps {
   rounded: string;
 }
 
-export default function GenericLink({ href, name, image, alt, rounded }: GenericLinkProps) {
+export default function GenericLink({ href, name, image, alt, rounded }: Readonly<GenericLinkProps>) {
   return (
     // Link que redireciona para respectivos links informado ao charmar o componente
     <Link

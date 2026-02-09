@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
+import { useTheme } from 'next-themes';
 
 
 // Pega o github calendar de forma dinâmica e faz importação do GitHubCalendar, renderiza no client
@@ -21,6 +22,8 @@ export default function HomePage() {
   // Pega o ano atual para o github calendar
   const currentYear = new Date().getFullYear();
   const [year, setYear] = useState(currentYear);
+  const [mounted, setMounted] = useState(false);
+  const { theme } = useTheme()
   const years = [2026, 2025];
 
   // useState para mudar o tamanho da fonte
@@ -31,11 +34,13 @@ export default function HomePage() {
     if (window.innerWidth < 640) {
       setFontSize(14);
     }
+    setMounted(true);
   }, []);
 
   // Traduções
   const traslation = useTranslations("HomePage");
 
+  if (!mounted) return null;
   return (
     // Div principal do conteúdo
     <div className="relative w-full min-h-screen bg-(--bg-main)">
@@ -87,7 +92,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="md:flex grid grid-cols-4 grid-rows-4 gap-4 pt-4 mb-8"
+              className="md:flex grid h-16 grid-cols-4 grid-rows-4 gap-8 pt-4"
             >
               { /* Github */}
               <GenericLink
@@ -135,22 +140,19 @@ export default function HomePage() {
               transition={{ duration: 0.5 }}
               className="xl:hidden"
             >
-              { /* tema escuro */}
-              <Image
-                src="https://i.postimg.cc/CxRgT7s9/pattern-lines-2.png"
-                width={512}
-                height={512}
-                alt="Geometric cubes wireframe"
-                className="w-45 hidden dark:flex md:w-50 h-auto"
-              />
-              { /* tema claro (temporário) */}
-              <Image
-                src="https://i.postimg.cc/J4jBnBW1/66bfcd68852f621b3819eb99-tech-illustration.png"
-                width={512}
-                height={512}
-                alt="Geometric cubes wireframe"
-                className="w-45 dark:hidden md:w-60 h-auto"
-              />
+              {mounted && (
+                <Image
+                  src={
+                    theme === "dark"
+                      ? "https://i.postimg.cc/CxRgT7s9/pattern-lines-2.png"
+                      : "https://i.postimg.cc/J4jBnBW1/66bfcd68852f621b3819eb99-tech-illustration.png"
+                  }
+                  width={512}
+                  height={512}
+                  alt="Geometric cubes wireframe"
+                  className="w-45 md:w-50"
+                />
+              )}
             </motion.div>
             {/* Calendario GitHub */}
             <motion.h1
@@ -209,13 +211,19 @@ export default function HomePage() {
             transition={{ duration: 0.5 }}
             className="hidden xl:flex"
           >
-            <Image
-              src="https://i.postimg.cc/6Q8KVvBv/pattern-lines.webp"
-              width={512}
-              height={512}
-              alt="Geometric cubes wireframe"
-              className="w-82 h-auto"
-            />
+            {mounted && (
+              <Image
+                src={
+                  theme === "dark"
+                    ? "https://i.postimg.cc/CxRgT7s9/pattern-lines-2.png"
+                    : "https://i.postimg.cc/J4jBnBW1/66bfcd68852f621b3819eb99-tech-illustration.png"
+                }
+                width={800}
+                height={800}
+                alt="Geometric cubes wireframe"
+                className="w-82"
+              />
+            )}
           </motion.div>
         </div>
       </div>
