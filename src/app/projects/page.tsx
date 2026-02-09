@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import NavBar from "../components/NavBar";
 import { useTranslations } from "next-intl";
 import { ScienceGothic } from "@/lib/fonts";
+import ProjectCard from "../components/ProjectCard";
 
 export default function ProjectsPage() {
   const traslation = useTranslations("ProjectsPage");
@@ -28,14 +29,14 @@ export default function ProjectsPage() {
         <rect width="100%" height="100%" filter="url(#noise)" />
       </svg>
       { /* Separador da navbar */}
-      <div className="w-full mb-10 h-px bg-(--soft-hover)"></div>
+      <div className="w-full mb-10 xl:mb-25 h-px bg-(--soft-hover)"></div>
       { /* Conteúdo principal */}
-      <div className="flex items-start mb-10 flex-col xl:flex-row px-6 md:px-10 xl:px-20 mt-15 md:mt-20 md:gap-6 gap-4 xl:gap-80">
+      <div className="flex items-start mb-10 flex-col px-10 md:px-20 xl:px-40 mt-15 md:mt-20 md:gap-6 gap-4">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className={`text-(--text-main) md:text-4xl text-[28px] ${ScienceGothic.className}`}
+          className={`text-(--text-main) font-bold md:text-4xl text-[28px] ${ScienceGothic.className}`}
         >
           {traslation("title")}
         </motion.h1>
@@ -44,18 +45,23 @@ export default function ProjectsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-(--text-secondary) md:text-[18px] text-[16px]"
+          className="text-(--text-secondary) w-2xl md:text-[18px] text-[16px] mb-4"
         >
           {traslation("description")}
         </motion.p>
-        <motion.h1
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className={`text-(--warning) md:text-4xl text-[28px] ${ScienceGothic.className}`}
-        >
-          ...Under construction
-        </motion.h1>
+          className="grid w-full grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+          <ProjectCard 
+            alt="Ecommerce project"
+            src="https://i.postimg.cc/ZYQB52Vj/Chat-GPT-Image-9-de-fev-de-2026-11-52-11.png"
+            name="Ecommerce" 
+            description={traslation("ecommerce")}
+            url="projects/ecommerce"
+          />
+        </motion.div>
       </div>
     </div>
   );
