@@ -36,7 +36,7 @@ export default function NavBar() {
             <li key={item.href}>
               <Link
                 href={item.href}
-                className="text-sm md:text-[15px] xl:text-[16px] tracking-wide hover:text-(--text-secondary) transition-colors"
+                className="text-sm md:text-[15px] font-bold xl:text-[16px] tracking-wide hover:text-(--text-secondary) transition-colors"
               >
                 {item.label}
               </Link>
