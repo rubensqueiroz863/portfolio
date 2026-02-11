@@ -25,9 +25,16 @@ type SectionProps = {
 
 function ThemeImage({ dark, light, width, height, alt }: ThemeImageProps) {
   const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const src = resolvedTheme === "dark" ? dark : light;
 
+  if (!mounted) return null;
+  
   return <Image className="rounded-2xl" src={src} width={width} height={height} alt={alt}/>;
 }
 
@@ -50,12 +57,11 @@ function Section({ id, title, children }: SectionProps) {
 export default function NexaShopPage() {
   const translation = useTranslations("NexaShopPage");
   const [features, setFeatures] = useState([""]);
+  
   const locale = useLocale();
 
   useEffect(() => {
     async function getFeaturesList() {
-      
-
       if (locale === "pt") {
         setFeatures([
           "Catálogo completo de produtos com busca e filtros",
@@ -98,51 +104,53 @@ export default function NexaShopPage() {
         <rect width="100%" height="100%" filter="url(#noise)" />
       </svg>
       { /* Separador da navbar */}
-      <div className="w-full mb-20 xl:mb-25 h-px bg-(--soft-border)"></div>
+      <div className="w-full mb-14 md:mb-20 xl:mb-25 h-px bg-(--soft-border)"></div>
       { /* Coonteúdo Principal */}
-      <div className="px-12 xl:px-98">
+      <div className="px-4 md:px-12 xl:px-98">
         <div className="flex flex-row justify-between mb-8 w-full">
-          <h1 className={`flex items-center justify-center font-bold ${ScienceGothic.className} text-[34px]`}>NexaShop</h1>
-          <div className="flex font-bold flex-row items-center gap-2">
-            <Link
-              className="flex relative rounded-md border border-transparent transition-color hover:border-(--hover-border) h-9 w-32 items-center justify-center gap-2 py-1 bg-(--bg-card)"
-              href={"https://rubensecommerce.vercel.app/"}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                width="22"
-                height="22"
-                className="w-4 h-4"
+          <div className="flex w-full md:flex-row md:justify-between md:gap-0 gap-2 flex-col">
+            <h1 className={`flex md:items-center md:justify-center font-bold ${ScienceGothic.className} text-[34px]`}>NexaShop</h1>
+            <div className=" flex font-bold flex-row items-center gap-2">
+              <Link
+                className="flex relative rounded-md border border-transparent transition-color hover:border-(--hover-border) h-9 w-32 items-center justify-center gap-2 py-1 bg-(--bg-card)"
+                href={"https://rubensecommerce.vercel.app/"}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <path d="M14 3h7v7"/>
-                <path d="M10 14L21 3"/>
-                <path d="M21 14v7H3V3h7"/>
-              </svg>
-              URL
-            </Link>
-            <Link
-              className="flex relative rounded-md border border-transparent transition-color hover:border-(--hover-border) h-9 w-32 items-center justify-center gap-2 py-1 bg-(--bg-card)"
-              href={"https://github.com/rubensqueiroz863/ecommerce"}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                src={"https://i.postimg.cc/zfGLrzpv/github-white-icon.webp"}
-                width={128}
-                height={128}
-                alt="External link image"
-                className="w-4 h-auto absolute left-3"
-              />
-              GitHub
-            </Link> 
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  width="22"
+                  height="22"
+                  className="w-4 h-4"
+                >
+                  <path d="M14 3h7v7"/>
+                  <path d="M10 14L21 3"/>
+                  <path d="M21 14v7H3V3h7"/>
+                </svg>
+                URL
+              </Link>
+              <Link
+                className="flex relative rounded-md border border-transparent transition-color hover:border-(--hover-border) h-9 w-32 items-center justify-center gap-2 py-1 bg-(--bg-card)"
+                href={"https://github.com/rubensqueiroz863/ecommerce"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src={"https://i.postimg.cc/zfGLrzpv/github-white-icon.webp"}
+                  width={128}
+                  height={128}
+                  alt="External link image"
+                  className="w-4 h-auto absolute left-3"
+                />
+                GitHub
+              </Link> 
+            </div>
           </div>
         </div>
         <ThemeImage
