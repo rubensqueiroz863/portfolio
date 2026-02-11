@@ -43,7 +43,7 @@ export default function AboutPage() {
           transition={{ duration: 0.5 }}
           className="flex xl:order-2 xl:mb-0 md:mb-8 justify-center px-10 md:px-20 flex-col gap-4 md:justify-start">
           <Image
-            src={"https://i.postimg.cc/Bv8DS8hf/IMG-20260107-231209521.png"}
+            src={"https://i.postimg.cc/HnVp1Z3z/Sem-imagem.jpg"}
             width={800}
             height={800}
             alt="My photo | Minha foto"
