@@ -29,6 +29,12 @@
   "ProjectsPage": {
     "title": "Projects",
     "description": "I’ve built a lot of small projects, but these are the ones I’m most proud of. All of them are open-source, so feel free to dive into the code, explore how things work, and contribute if you have ideas to make them better.",
-    "ecommerce": "My personal ecommerce project"
+    "ecommerce": "My personal e-commerce project"
+  },
+  "NexaShopPage": {
+    "overview": "NexaShop is a full-stack e-commerce platform built with Next.js and Spring Boot, designed to provide a smooth and secure shopping experience. The application implements a scalable architecture and supports complete management of the purchasing lifecycle.",
+    "overviewApi1": "Powered by the Spring Boot",
+    "overviewApi2": "API, NexaShop was designed to handle multiple operations simultaneously, delivering a fast, stable, and scalable application.",
+    "featuresDescription": "Originally built as a personal project to deepen my full-stack development skills, NexaShop started as a simple e-commerce application and has since evolved into a modern, scalable platform focused on performance, usability, and clean architecture. With recent improvements and refinements, here are the current features:"
   }
 }
