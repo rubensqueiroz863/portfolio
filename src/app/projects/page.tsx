@@ -1,10 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import NavBar from "../components/NavBar";
 import { useTranslations } from "next-intl";
 import { ScienceGothic } from "@/lib/fonts";
 import ProjectCard from "../components/ProjectCard";
+import Footer from "../components/Footer";
+import NavBar from "../components/NavBar";
 
 export default function ProjectsPage() {
   const traslation = useTranslations("ProjectsPage");
@@ -29,9 +30,9 @@ export default function ProjectsPage() {
         <rect width="100%" height="100%" filter="url(#noise)" />
       </svg>
       { /* Separador da navbar */}
-      <div className="w-full mb-10 xl:mb-25 h-px bg-(--soft-hover)"></div>
+      <div className="w-full mb-10 xl:mb-25 h-px bg-(--soft-border)"></div>
       { /* Conteúdo principal */}
-      <div className="flex items-start mb-10 flex-col px-10 md:px-20 xl:px-40 mt-15 md:mt-20 md:gap-6 gap-4">
+      <div className="flex items-start mb-10 flex-col px-12 xl:px-58 mt-15 md:mt-20 md:gap-6 gap-4">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -56,13 +57,17 @@ export default function ProjectsPage() {
           className="grid w-full grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
           <ProjectCard 
             alt="Ecommerce project"
-            src="https://i.postimg.cc/ZYQB52Vj/Chat-GPT-Image-9-de-fev-de-2026-11-52-11.png"
-            name="Ecommerce" 
+            src="https://i.postimg.cc/GpFXZj7n/ecommerce.png"
+            name="NexaShop" 
             description={traslation("ecommerce")}
-            url="projects/ecommerce"
+            url="projects/nexashop"
           />
         </motion.div>
       </div>
+      { /* Linha divisora do footer */}
+      <div className="w-full mt-45 xl:mt-35 h-px bg-(--hover-border)" />
+      { /* Rodapé da pagina */ }
+      <Footer />
     </div>
   );
 }
