@@ -3,6 +3,7 @@
 import Footer from "@/app/components/Footer";
 import NavBar from "@/app/components/NavBar";
 import { ScienceGothic } from "@/lib/fonts";
+import { motion } from "framer-motion";
 import { useLocale, useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
 import Image from "next/image";
@@ -33,7 +34,14 @@ function ThemeImage({ dark, light, width, height, alt }: ThemeImageProps) {
 
   const src = resolvedTheme === "dark" ? dark : light;
 
-  if (!mounted) return null;
+  if (!mounted) {
+    return (
+      <div className="w-full rounded-2xl aspect-video animate-pulse bg-gray-300">
+      </div>
+    )
+  }
+    
+  
   
   return <Image className="rounded-2xl" src={src} width={width} height={height} alt={alt}/>;
 }
@@ -41,14 +49,20 @@ function ThemeImage({ dark, light, width, height, alt }: ThemeImageProps) {
 function Section({ id, title, children }: SectionProps) {
   return (
     <div className="flex flex-col gap-5 mb-8 mt-8">
-      <Link
-        href={`/projects/ecommerce#${id}`}
-        id={id}
-        className="relative font-bold text-[24px] before:content-['#'] before:absolute before:-left-5 before:opacity-0 hover:before:opacity-40 before:transition-opacity"
+      <motion.div
+        initial={{ y: 40, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
       >
-        {title}
-      </Link>
-
+        <Link
+          href={`/projects/nexashop#${id}`}
+          id={id}
+          className="relative font-bold text-[24px] before:content-['#'] before:absolute before:-left-5 before:opacity-0 hover:before:opacity-40 before:transition-opacity"
+        >
+          {title}
+        </Link>
+      </motion.div>
       {children}
     </div>
   );
@@ -109,8 +123,20 @@ export default function NexaShopPage() {
       <div className="px-4 md:px-12 xl:px-98">
         <div className="flex flex-row justify-between mb-8 w-full">
           <div className="flex w-full md:flex-row md:justify-between md:gap-0 gap-2 flex-col">
-            <h1 className={`flex md:items-center md:justify-center font-bold ${ScienceGothic.className} text-[34px]`}>NexaShop</h1>
-            <div className=" flex font-bold flex-row items-center gap-2">
+            <motion.h1 
+              initial={{ y: 40, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className={`flex md:items-center md:justify-center font-bold ${ScienceGothic.className} text-[34px]`}
+            >
+              NexaShop
+            </motion.h1>
+            <motion.div
+              initial={{ y: 40, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className="flex font-bold flex-row items-center gap-2"
+            >
               <Link
                 className="flex relative rounded-md border border-transparent transition-color hover:border-(--hover-border) h-9 w-32 items-center justify-center gap-2 py-1 bg-(--bg-card)"
                 href={"https://rubensecommerce.vercel.app/"}
@@ -150,22 +176,38 @@ export default function NexaShopPage() {
                 />
                 GitHub
               </Link> 
-            </div>
+            </motion.div>
           </div>
         </div>
-        <ThemeImage
-          dark="https://i.postimg.cc/MG5xpBMX/Nexa-Shop-Google-Chrome-10-02-2026-20-01-10.png"
-          light="https://i.postimg.cc/JzQqh38s/Nexa-Shop-Google-Chrome-10-02-2026-22-46-13.png"
-          width={1280}
-          height={1280}
-          alt="NexaShop image"
-        />
+        <motion.div
+          initial={{ y: 40, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <ThemeImage
+            dark="https://i.postimg.cc/MG5xpBMX/Nexa-Shop-Google-Chrome-10-02-2026-20-01-10.png"
+            light="https://i.postimg.cc/JzQqh38s/Nexa-Shop-Google-Chrome-10-02-2026-22-46-13.png"
+            width={1280}
+            height={1280}
+            alt="NexaShop image"
+          />
+        </motion.div>
         <Section id="overview" title="Overview">
           <div className="flex flex-col gap-4 text-(--text-secondary)">
-            <p>
+            <motion.p
+              initial={{ y: 40, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
               {translation('overview')}
-            </p>
-            <p>
+            </motion.p>
+            <motion.p
+              initial={{ y: 40, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
               {translation('overviewApi1')}
               <Link 
                 target="_blank"
@@ -190,11 +232,17 @@ export default function NexaShopPage() {
                 </svg>
               </Link>
               {translation('overviewApi2')}
-            </p>
+            </motion.p>
           </div>
         </Section>
         <Section id="technologies" title="Technologies">
-          <ul className="flex flex-col pl-2 list-disc gap-2 text-(--text-secondary) md:text-[18px] text-[16px]">
+          <motion.ul
+            initial={{ y: 40, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="flex flex-col pl-2 list-disc gap-2 text-(--text-secondary) md:text-[18px] text-[16px]"
+          >
             { /* React */}
             <div className="flex gap-2 items-center">
               <Link 
@@ -290,44 +338,79 @@ export default function NexaShopPage() {
               </Link>
               <p>- Java Framework</p>
             </div>
-          </ul>
+          </motion.ul>
         </Section>
         <Section id="features" title="Features">
           <div className="flex flex-col gap-4 text-(--text-secondary)">
-            <p>{translation('featuresDescription')}</p>
-            <ul className="list-disc pl-5">
+            <motion.p
+              initial={{ y: 40, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              {translation('featuresDescription')}
+            </motion.p>
+            <motion.ul
+              initial={{ y: 40, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="list-disc pl-5"
+            >
               {features.map((feature) =>
                 <li key={feature}>{feature}</li>
               )}
-            </ul>
+            </motion.ul>
           </div>
         </Section>
         <Section id="project-design" title="Project Design">
           <div className="flex flex-col gap-4 text-(--text-secondary)">
-            <ThemeImage
-              dark="https://i.postimg.cc/MG5xpBMX/Nexa-Shop-Google-Chrome-10-02-2026-20-01-10.png"
-              light="https://i.postimg.cc/JzQqh38s/Nexa-Shop-Google-Chrome-10-02-2026-22-46-13.png"
-              width={1280}
-              height={1280}
-              alt="NexaShop image"
-            />
-            <p className="text-center mb-8">homepage</p>
-            <ThemeImage
-              dark="https://i.postimg.cc/gJhLxdRP/Nexa-Shop-Google-Chrome-10-02-2026-22-49-04.png"
-              light="https://i.postimg.cc/m2jzzmcL/Nexa-Shop-Google-Chrome-10-02-2026-22-50-12.png"
-              width={1280}
-              height={1280}
-              alt="NexaShop image"
-            />
-            <p className="text-center mb-8">cart menu</p>
-            <ThemeImage
-              dark="https://i.postimg.cc/0NwyfnNG/Nexa-Shop-Google-Chrome-10-02-2026-22-53-00.png"
-              light="https://i.postimg.cc/QC08tnfn/Nexa-Shop-Google-Chrome-10-02-2026-22-54-06.png"
-              width={1280}
-              height={1280}
-              alt="NexaShop image"
-            />
-            <p className="text-center">product page</p>
+            <motion.div
+              initial={{ y: 40, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <ThemeImage
+                dark="https://i.postimg.cc/MG5xpBMX/Nexa-Shop-Google-Chrome-10-02-2026-20-01-10.png"
+                light="https://i.postimg.cc/JzQqh38s/Nexa-Shop-Google-Chrome-10-02-2026-22-46-13.png"
+                width={1280}
+                height={1280}
+                alt="NexaShop image"
+              />
+              <p className="text-center mb-4">homepage</p>
+            </motion.div>
+            
+            <motion.div
+              initial={{ y: 40, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <ThemeImage
+                dark="https://i.postimg.cc/gJhLxdRP/Nexa-Shop-Google-Chrome-10-02-2026-22-49-04.png"
+                light="https://i.postimg.cc/m2jzzmcL/Nexa-Shop-Google-Chrome-10-02-2026-22-50-12.png"
+                width={1280}
+                height={1280}
+                alt="NexaShop image"
+              />
+              <p className="text-center mb-4">cart menu</p>
+            </motion.div>
+            <motion.div
+              initial={{ y: 40, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <ThemeImage
+                dark="https://i.postimg.cc/0NwyfnNG/Nexa-Shop-Google-Chrome-10-02-2026-22-53-00.png"
+                light="https://i.postimg.cc/QC08tnfn/Nexa-Shop-Google-Chrome-10-02-2026-22-54-06.png"
+                width={1280}
+                height={1280}
+                alt="NexaShop image"
+              />
+              <p className="text-center">product page</p>
+            </motion.div>
           </div>
         </Section>
       </div>
