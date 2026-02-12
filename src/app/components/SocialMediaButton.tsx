@@ -15,6 +15,8 @@ export default function GenericLink({ href, name, image, alt, rounded }: Readonl
     // Link que redireciona para respectivos links informado ao charmar o componente
     <Link
       href={href}
+      target="_blank"
+      rel="noopener noreferrer"
       className="flex items-center text-[15px] cursor-pointer group gap-1.5 text-(--text-main)"
     >
       { /* Imagem da rede social */}
